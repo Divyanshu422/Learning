@@ -1,0 +1,14 @@
+
+
+
+/* Universal stylinbg */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+    border: 0;
+    text-decoration: none;
+    transition: .2s linear;
+    text-transform: capitalize;
+}
