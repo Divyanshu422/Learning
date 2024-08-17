@@ -1,4 +1,4 @@
-# The project is Random Gif Generator
+# The project is Random Gif Generator:
 
 - Source: <b>Love Babbar Advanced React Lecture 1</b>
 - Package's installed
