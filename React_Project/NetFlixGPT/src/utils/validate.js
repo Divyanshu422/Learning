@@ -10,12 +10,12 @@
     export const isDataValid = (email,password) =>{
 
         // Regex pattern for validating email
-        const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/test(email);
+        const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         // If email is not valid then return => Email Failed
         if(!isEmailValid) return 'Email is not a valid';
 
         // Regex pattern for validating password
-        const isPasswordValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/test(password);
+        const isPasswordValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password);
         // If Password is not valid then return => Password Failed
         if(!isPasswordValid) return 'Password Failed';
 

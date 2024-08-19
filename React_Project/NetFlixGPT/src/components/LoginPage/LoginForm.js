@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { useState } from'react';
+import { useState, useRef } from'react';
+import { isDataValid } from '../../utils/validate';
 function LoginForm() {
     
     // State variables used to Store the state -> LoginForm or SingInForm
@@ -9,10 +10,18 @@ function LoginForm() {
         setIsSignInForm(!isSignInForm);
     }
 
+
+    // ! On submit checking the whether the email or password is valid or not => To pass the email and password we will use UseRef hook
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
     const handleSumit = (e) => {
-         e.preventDefault();
-        // Implementing the logic for the form submission
-        console.log('Form Submitted');
+        e.preventDefault();
+        // Getting the email and password
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+        // Call the function to validate the form-> defines in util file
+        const value = isDataValid(email, password); 
+        console.log(value);
     }
   return (
     <form className='absolute flex flex-col items-center justify-center w-screen h-screen'>
@@ -25,8 +34,8 @@ function LoginForm() {
             {
                 !isSignInForm && <input type="text" name="name" placeholder="Name of User" className='w-10/12 mx-auto rounded-md py-4 px-4 text-neutral-100 bg-slate-600/50' required />
             }
-            <input type="email" name="email" placeholder="Email or Phone number" className='w-10/12 mx-auto rounded-md py-4 px-4 text-neutral-100 bg-slate-600/50' required />
-            <input type="password" name="password" placeholder= 'Password' className='w-10/12 mx-auto rounded-md py-4 px-4 text-neutral-100 bg-slate-600/50' required/>
+            <input type="email" ref={emailRef} name="email" placeholder="Email or Phone number" className='w-10/12 mx-auto rounded-md py-4 px-4 text-neutral-100 bg-slate-600/50' required />
+            <input type="password" ref={passwordRef} name="password" placeholder= 'Password' className='w-10/12 mx-auto rounded-md py-4 px-4 text-neutral-100 bg-slate-600/50' required/>
 
             {/* ! Implementing the onClick on the button */}
             <button className = 'w-10/12  mx-auto py-2 px-4 text-[#F8F6F4] text-xl font-bold bg-red-700' onClick={handleSumit}>
