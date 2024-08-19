@@ -6,6 +6,7 @@ function LoginForm() {
     
     // State variables used to Store the state -> LoginForm or SingInForm
     const [isSignInForm, setIsSignInForm] = useState(true);
+    const [errorMessage, setErrorMessage] = useState('');
     const handlerToggleForm = () => {
         setIsSignInForm(!isSignInForm);
     }
@@ -20,8 +21,8 @@ function LoginForm() {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         // Call the function to validate the form-> defines in util file
-        const value = isDataValid(email, password); 
-        console.log(value);
+        const errorMessage = isDataValid(email, password); 
+        setErrorMessage(errorMessage);
     }
   return (
     <form className='absolute flex flex-col items-center justify-center w-screen h-screen'>
@@ -37,6 +38,12 @@ function LoginForm() {
             <input type="email" ref={emailRef} name="email" placeholder="Email or Phone number" className='w-10/12 mx-auto rounded-md py-4 px-4 text-neutral-100 bg-slate-600/50' required />
             <input type="password" ref={passwordRef} name="password" placeholder= 'Password' className='w-10/12 mx-auto rounded-md py-4 px-4 text-neutral-100 bg-slate-600/50' required/>
 
+            {/* Displaying the error Message */}
+            <div>
+                {
+                    errorMessage && <p className='w-10/12 mx-auto  py-2 text-red-500 '>{errorMessage}</p>
+                }
+            </div>
             {/* ! Implementing the onClick on the button */}
             <button className = 'w-10/12  mx-auto py-2 px-4 text-[#F8F6F4] text-xl font-bold bg-red-700' onClick={handleSumit}>
                 {
