@@ -11,7 +11,7 @@ const Header = () => {
                     <option lang='hi' value="hindi">हिन्दी</option>
                 </select>
             </div>
-            <button className='bg-red-600 py-1 px-4 text-white font-medium rounded-sm'>Sign In</button>
+            <button className='bg-red-600 py-[0.5rem] px-6 text-white font-medium rounded-lg'>Sign In</button>
         </div>
     </div>
   )

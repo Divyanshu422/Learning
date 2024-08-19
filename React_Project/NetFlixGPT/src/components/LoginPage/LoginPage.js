@@ -1,14 +1,15 @@
 import React from 'react'
 import Header from '../Header'
 import BackGround_Image from '../../assets/BackGround_Image.jpg'
+import LoginForm from './LoginForm'
 const LoginPage = () => {
   return (
-    <div>
+    <div className='relative'>
       <Header/>
-      <div>
-        <img src={BackGround_Image} alt='BackGroundImage'/>
+        <LoginForm/>
+        <img src={BackGround_Image} alt='BackGroundImage' className='w-screen h-screen'/>
       </div>
-    </div>
+
   )
 }
 
