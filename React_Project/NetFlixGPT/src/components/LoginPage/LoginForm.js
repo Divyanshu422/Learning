@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 function LoginForm() {
+
   return (
     <form className='absolute flex flex-col items-center justify-center w-screen h-screen'>
         <div className='flex flex-col w-3/12 py-20 px-10 gap-y-6 rounded-md  bg-stone-950/80 '>
@@ -19,7 +20,9 @@ function LoginForm() {
                 <NavLink className="text-slate-300"> Need Help?</NavLink>
             </div>
             <div className='w-10/12  mx-auto'>
-                <p className='text-gray-400'>New to Netflix? <span className='text-white'>Sign up now</span></p>
+                <p className='text-gray-400'>New to Netflix? 
+                        <NavLink className='text-white' onClick={handlerToggleForm}>SignUp now</NavLink>
+                </p>
                 <p className='text-gray-400'>This page is protected by Google reCAPTCHA to ensure you're not a bot. <span><NavLink className='text-blue-400'>Learn more.</NavLink></span></p>
             </div>
         </div>
