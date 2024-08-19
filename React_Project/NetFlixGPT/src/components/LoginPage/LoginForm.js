@@ -16,9 +16,16 @@ function LoginForm() {
             <h1 className='text-4xl font-bold text-white w-10/12  mx-auto'>{
             isSignInForm?  'Sign In': 'Login Form'
             }</h1>
+            {
+                !isSignInForm && <input type="text" name="name" placeholder="Name of User" className='w-10/12 mx-auto rounded-md py-4 px-4 text-neutral-100 bg-slate-600/50' required />
+            }
             <input type="email" name="email" placeholder="Email or Phone number" className='w-10/12 mx-auto rounded-md py-4 px-4 text-neutral-100 bg-slate-600/50' required />
             <input type="password" name="password" placeholder= 'Password' className='w-10/12 mx-auto rounded-md py-4 px-4 text-neutral-100 bg-slate-600/50' required/>
-            <button className = 'w-10/12  mx-auto py-2 px-4 text-[#F8F6F4] text-xl font-bold bg-red-700'>SignIn</button>
+            <button className = 'w-10/12  mx-auto py-2 px-4 text-[#F8F6F4] text-xl font-bold bg-red-700'>
+                {
+                    isSignInForm? 'Sign In': 'Login'
+                }
+            </button>
 
             <div className='flex w-10/12 text-sm justify-between mx-auto'>
                 <div className='flex'>
@@ -28,10 +35,19 @@ function LoginForm() {
                 <NavLink className="text-slate-300"> Need Help?</NavLink>
             </div>
             <div className='w-10/12  mx-auto'>
-                <p className='text-gray-400'>New to Netflix? 
-                        <NavLink className='text-white' onClick={handlerToggleForm}>SignUp now</NavLink>
+                {
+                 isSignInForm && <p className='text-gray-400 text-sm'>New to Netflix? 
+                        <NavLink className='text-white cursor-pointer' onClick={handlerToggleForm}> Login </NavLink>
                 </p>
-                <p className='text-gray-400'>This page is protected by Google reCAPTCHA to ensure you're not a bot. <span><NavLink className='text-blue-400'>Learn more.</NavLink></span></p>
+                }  
+                {
+                 !isSignInForm && <p className='text-gray-400 text-sm'>Already a User 
+                        <NavLink className='text-white cursor-pointer' onClick={handlerToggleForm}> SignIn </NavLink>
+                </p>
+                } 
+                {
+                  isSignInForm && <p className='text-gray-400 py-2 text-sm'>This page is protected by Google reCAPTCHA to ensure you're not a bot. <span><NavLink className='text-blue-400 cursor-pointer'>Learn more.</NavLink></span></p>
+                }
             </div>
         </div>
     </form>
