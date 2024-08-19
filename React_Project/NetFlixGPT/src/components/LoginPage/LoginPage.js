@@ -1,9 +1,13 @@
 import React from 'react'
-
+import Header from '../Header'
+import BackGround_Image from '../../assets/BackGround_Image.jpg'
 const LoginPage = () => {
   return (
     <div>
-      LoginPage
+      <Header/>
+      <div>
+        <img src={BackGround_Image} alt='BackGroundImage'/>
+      </div>
     </div>
   )
 }
