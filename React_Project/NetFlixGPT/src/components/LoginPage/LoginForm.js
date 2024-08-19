@@ -1,7 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useState } from'react';
 function LoginForm() {
-
+    
+    // State variables used to Store the state -> LoginForm or SingInForm
+    const [isSignInForm, setIsSignInForm] = useState(true);
+    const handlerToggleForm = () => {
+        setIsSignInForm(!isSignInForm);
+        console.log(isSignInForm);
+    }
   return (
     <form className='absolute flex flex-col items-center justify-center w-screen h-screen'>
         <div className='flex flex-col w-3/12 py-20 px-10 gap-y-6 rounded-md  bg-stone-950/80 '>
