@@ -43,7 +43,7 @@ function LoginForm() {
                 {
                     //! errorMessage && <p className='w-10/12 mx-auto  py-2 text-red-500 '>{errorMessage}</p>
                     //  the errorMessage either contains error information or null. if it contains null -> it will not be displayed on the screen
-                    <p className='w-10/12 mx-auto  py-2 text-red-500 '>{errorMessage}</p>
+                    <p className='w-10/12 mx-auto font-bold py-2 text-red-500 '>{errorMessage}</p>
                 }
             </div>
             {/* ! Implementing the onClick on the button */}
