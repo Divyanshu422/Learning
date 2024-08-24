@@ -1,39 +1,46 @@
 import React from 'react'
 import { useFormik } from 'formik'
 
-  function YoutubeForm() {
-  
-    const useFormikObject = useFormik({
-      initialValues:{
-        name: '',
-        email: '',
-        channel: ''
-      },
-      onSubmit: ( (values_Object)=>{
+const initialValues ={
+  name: '',
+  email: '',
+  channel: ''
+}
+const onSubmit = (values_Object)=>{
           
-      }),
-      //* validate is the 3rd property => which receives the values object automatically
-      validate: ((values)=>{
-      // Creating the error Object: with keys simular to values_Object. hence keys are error.name, error.email, error.channel
-      // * the keys of the error object corresponds to the name attribute of the input fields (eg: error.name).
-      // * the values to the key shall be String
-        let error = {}
-        if(!values.name) {
-          error.name = 'Name is required'
-        }
-        if(!values.email) {
-          error.email = 'Email not Provided'
-        }else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)){
-          error.email = 'Invalid Email'
-        }
-        
-        if(!values.channel) {
-          error.email = 'Channel name please'
-        }
-        //* Returning the error Object
-        return error;
-      })
+}
+const validate = ((values)=>{
+  // Creating the error Object: with keys simular to values_Object. hence keys are error.name, error.email, error.channel
+  // * the keys of the error object corresponds to the name attribute of the input fields (eg: error.name).
+  // * the values to the key shall be String
+    let error = {}
+    if(!values.name) {
+      error.name = 'Name is required'
+    }
+    if(!values.email) {
+      error.email = 'Email not Provided'
+    }else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)){
+      error.email = 'Invalid Email'
+    }
+    
+    if(!values.channel) {
+      error.email = 'Channel name please'
+    }
+    //* Returning the error Object
+    return error;
+  })
+
+
+  function YoutubeForm() {
+    const useFormikObject = useFormik({
+      // initialValues:initialValues,
+      initialValues,
+      // onSubmit: onSubmit,
+      onSubmit,
+      // validate: validate
+      validate
     })
+   
 
  
     return ( 
