@@ -1,7 +1,15 @@
 import React from 'react'
 
-function YoutubeForm() {
-  return (
+  import { useFormik } from 'formik'
+
+
+  function YoutubeForm() {
+    //* The hook consumes the object as parameter and return a object
+    const useFormikObject = useFormik({})
+    console.log('the hook contains multiple properties',useFormikObject);
+    return (
+
+
     <div>
         <form>
             {/* The value of `htmlFor` attribute shall be same as the `id` attribute of input tag */}
