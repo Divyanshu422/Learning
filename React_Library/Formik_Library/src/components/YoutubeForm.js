@@ -8,19 +8,22 @@ import { useFormik } from 'formik'
         name: '',
         email: '',
         channel: ''
-      }
+      },
+      onSubmit: ( (values_Object)=>{
+          console.log('After clicking the submit button',values_Object)
+      })
     })
-
-    console.log(useFormikObject.values);
-
+    
+ 
     return ( 
     <div>
-        <form>
-            {/*  For tracking the fields value and maintaining the state -> we need to use the onChange and value attribute */}
-            {/* The useFormik hook provides the handleChange method, which is used to update the form field values. When a user interacts with an input field (e.g., typing into a text field), handleChange updates the corresponding value in formik.values based on the name attribute of the input field.
-           */}
+        <form onSubmit={useFormikObject.handleSubmit}>
             <label htmlFor='name'>Name</label>
-            <input type='text' id='name' name='name' onChange={useFormikObject.handleChange} value={useFormikObject.values.name}/>
+            <input type='text' 
+                   id='name' 
+                   name='name' 
+                   onChange={useFormikObject.handleChange} 
+                   value={useFormikObject.values.name}/>
 
             <label htmlFor='email'>E-mail</label>
             <input type='email' id='email' name='email' onChange={useFormikObject.handleChange} value={useFormikObject.values.email} />
@@ -28,7 +31,7 @@ import { useFormik } from 'formik'
             <label htmlFor='channel'>Channel</label>
             <input type='text' id='channel' name='channel' onChange={useFormikObject.handleChange} value={useFormikObject.values.channel} />
 
-            <button> Submit </button>
+            <button type='submit'> Submit </button>
         </form>
       
     </div>
