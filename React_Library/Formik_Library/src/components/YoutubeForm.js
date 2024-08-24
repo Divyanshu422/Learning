@@ -10,9 +10,6 @@ const onSubmit = (values_Object)=>{
           
 }
 const validate = ((values)=>{
-  // Creating the error Object: with keys simular to values_Object. hence keys are error.name, error.email, error.channel
-  // * the keys of the error object corresponds to the name attribute of the input fields (eg: error.name).
-  // * the values to the key shall be String
     let error = {}
     if(!values.name) {
       error.name = 'Name is required'
@@ -22,42 +19,48 @@ const validate = ((values)=>{
     }else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)){
       error.email = 'Invalid Email'
     }
-    
     if(!values.channel) {
-      error.email = 'Channel name please'
+      error.channel = 'Channel name please'
     }
-    //* Returning the error Object
     return error;
   })
 
 
   function YoutubeForm() {
     const useFormikObject = useFormik({
-      // initialValues:initialValues,
       initialValues,
-      // onSubmit: onSubmit,
       onSubmit,
-      // validate: validate
       validate
     })
-   
-
- 
+    console.log(useFormikObject.errors)
     return ( 
     <div>
         <form onSubmit={useFormikObject.handleSubmit}>
+          <div className="form-control">
             <label htmlFor='name'>Name</label>
             <input type='text' 
                    id='name' 
                    name='name' 
                    onChange={useFormikObject.handleChange} 
                    value={useFormikObject.values.name}/>
-
-            <label htmlFor='email'>E-mail</label>
-            <input type='email' id='email' name='email' onChange={useFormikObject.handleChange} value={useFormikObject.values.email} />
-
-            <label htmlFor='channel'>Channel</label>
-            <input type='text' id='channel' name='channel' onChange={useFormikObject.handleChange} value={useFormikObject.values.channel} />
+                   {
+                       useFormikObject.errors.name && <p className='error'>{useFormikObject.errors.name}</p>
+                   }
+            </div>
+            <div className="form-control">
+              <label htmlFor='email'>E-mail</label>
+              <input type='email' id='email' name='email' onChange={useFormikObject.handleChange} value={useFormikObject.values.email} />
+              {
+                useFormikObject.errors.email? <p className='error'>{useFormikObject.errors.email}</p>:null
+              }
+            </div>
+            <div className="form-control">
+              <label htmlFor='channel'>Channel</label>
+              <input type='text' id='channel' name='channel' onChange={useFormikObject.handleChange} value={useFormikObject.values.channel} />
+              {
+                useFormikObject.errors.channel && <p className='error'>{useFormikObject.errors.channel}</p>  // error message for channel field if it's not provided or empty.  else null  for no error message.
+              }
+            </div>
 
             <button type='submit'> Submit </button>
         </form>
