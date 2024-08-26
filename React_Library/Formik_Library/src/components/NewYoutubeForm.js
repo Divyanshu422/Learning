@@ -9,8 +9,6 @@ const initialValues ={
 const onSubmit = (values_Object)=>{
           
 }
-
-
 // * Validation Schema for yup for all the fields:
 const validationSchema = yup.object({
   name: yup.string().required('Name is required!'),
@@ -20,7 +18,7 @@ const validationSchema = yup.object({
   function NewYoutubeForm() {
     const useFormikObject = useFormik({
       initialValues,
-      onSubmit,
+      onSubmit ,
       validationSchema
     })
     console.log(useFormikObject.touched);
@@ -32,23 +30,21 @@ const validationSchema = yup.object({
             <input type='text' 
                    id='name' 
                    name='name' 
-                   onChange={useFormikObject.handleChange} 
-                   onBlur={useFormikObject.handleBlur}
-                   value={useFormikObject.values.name}/>
+                   {...useFormikObject.getFieldProps('name')}/>
                    {
                      useFormikObject.touched.name && useFormikObject.errors.name && <p className='error'>{useFormikObject.errors.name}</p>
                    }
             </div>
             <div className="form-control">
               <label htmlFor='email'>E-mail</label>
-              <input type='email' id='email' name='email' onChange={useFormikObject.handleChange} onBlur={useFormikObject.handleBlur} value={useFormikObject.values.email} />
+              <input type='email' id='email' name='email' {...useFormikObject.getFieldProps('email')}/> 
               {
                 useFormikObject.touched.email && useFormikObject.errors.email? <p className='error'>{useFormikObject.errors.email}</p>:null
               }
             </div>
             <div className="form-control">
               <label htmlFor='channel'>Channel</label>
-              <input type='text' id='channel' name='channel' onChange={useFormikObject.handleChange} onBlur={useFormikObject.handleBlur} value={useFormikObject.values.channel} />
+              <input type='text' id='channel' name='channel' {...useFormikObject.getFieldProps('channel')}/>
               {
                  useFormikObject.touched.channel && useFormikObject.errors.channel && <p className='error'>{useFormikObject.errors.channel}</p>  // error message for channel field if it's not provided or empty.  else null  for no error message.
               }
