@@ -37,7 +37,7 @@ function NewYoutubeForm() {
             name="name"
             placeholder="Enter Your name"
           />
-          <ErrorMessage name="name" component="div" />
+          <ErrorMessage name="name" component="div" className="error" />
         </div>
 
         <div className="form-control">

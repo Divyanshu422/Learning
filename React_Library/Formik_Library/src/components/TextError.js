@@ -1,14 +1,8 @@
+import React from "react";
 
+function TextError(props) {
+  console.log(props);
+  return <div className="error">{props.children}</div>;
+}
 
-        import React from "react";
-
-        function TextError(props) {
-            console.log(props.children)
-        return (
-                <div className="error">
-                    {props.children}
-                </div>
-            );
-        }
-
-        export default TextError;
+export default TextError;
