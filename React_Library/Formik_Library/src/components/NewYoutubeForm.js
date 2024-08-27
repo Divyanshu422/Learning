@@ -2,6 +2,8 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import TextError from "./TextError";
+
+// Initial form values
 const initialValues = {
   name: "",
   email: "",
@@ -12,23 +14,34 @@ const initialValues = {
     facebook: "",
     instagram: "",
   },
+  phoneNumber: ["", ""],
 };
+
+// On submit function
 const onSubmit = (values_Object) => {
   console.log(values_Object);
 };
-    const validationSchema = yup.object({
-      name: yup.string().required("Name is required!"),
-      email: yup
-        .string()
-        .email("Invalid email format")
-        .required("Email is required"),
-      channel: yup.string().required("Channel name is required"),
-      comment: yup.string().required("Enter comment please"),
-      social: yup.object({
-        facebook: yup.string().required("Facebook profile is required"),
-        instagram: yup.string().required("Instagram profile is required"),
-      }),
-    });
+
+// Validation schema
+const validationSchema = yup.object({
+  name: yup.string().required("Name is required!"),
+  email: yup
+    .string()
+    .email("Invalid email format")
+    .required("Email is required"),
+  channel: yup.string().required("Channel name is required"),
+  comment: yup.string().required("Enter comment please"),
+  social: yup.object({
+    facebook: yup.string().required("Facebook profile is required"),
+    instagram: yup.string().required("Instagram profile is required"),
+  }),
+  phoneNumber: yup
+    .array()
+    .of(yup.string().required())
+    .length(2, "Must have exactly 2 phone numbers"),
+});
+
+// Form component
 function NewYoutubeForm() {
   return (
     <Formik
@@ -69,41 +82,28 @@ function NewYoutubeForm() {
             placeholder="Any Comments"
           />
           <ErrorMessage name="comment">
-            {
-              /*
-               * Implementing the render props pattern:
-               * we need to define the arrow function which consume the props where error is defined in children key
-               */
-              (props) => {
-                return (
-                  <div>
-                    <p className="error">{props}</p>
-                  </div>
-                );
-              }
-            }
+            {(msg) => (
+              <div>
+                <p className="error">{msg}</p>
+              </div>
+            )}
           </ErrorMessage>
         </div>
 
         <div className="form-control">
           <label htmlFor="address">Address</label>
           <Field name="address">
-            {(props) => {
-              // Destructuring the props
-              const { meta, field, form } = props;
-              // To hook the input tag with Formik we need to spread Field prop
-              return (
-                <div>
-                  <input type="text" id="address" {...field} />
-                  {meta.touched && meta.error ? <div>{meta.error}</div> : null}
-                </div>
-              );
-            }}
+            {({ meta, field }) => (
+              <div>
+                <input type="text" id="address" {...field} />
+                {meta.touched && meta.error ? <div>{meta.error}</div> : null}
+              </div>
+            )}
           </Field>
         </div>
 
         <div className="form-control">
-          <label htmlFor="facebook">FaceBook Profile</label>
+          <label htmlFor="facebook">Facebook Profile</label>
           <Field type="text" id="facebook" name="social.facebook" />
           <ErrorMessage
             name="social.facebook"
@@ -122,9 +122,30 @@ function NewYoutubeForm() {
           />
         </div>
 
-        <button type="submit"> Submit </button>
+        <div className="form-control">
+          <label htmlFor="primaryPh">Primary Phone Number</label>
+          <Field type="text" id="primaryPh" name="phoneNumber[0]" />
+          <ErrorMessage
+            name="phoneNumber[0]"
+            component="div"
+            className="error"
+          />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="secondaryPh">Secondary Phone Number</label>
+          <Field type="text" id="secondaryPh" name="phoneNumber[1]" />
+          <ErrorMessage
+            name="phoneNumber[1]"
+            component="div"
+            className="error"
+          />
+        </div>
+
+        <button type="submit">Submit</button>
       </Form>
     </Formik>
   );
 }
+
 export default NewYoutubeForm;
