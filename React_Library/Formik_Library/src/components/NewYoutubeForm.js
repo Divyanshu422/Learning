@@ -1,13 +1,14 @@
 import React from "react";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 const initialValues = {
   name: "",
   email: "",
   channel: "",
 };
-const onSubmit = (values_Object) => {};
-// * Validation Schema for yup for all the fields:
+const onSubmit = (values_Object) => {
+  console.log(values_Object);
+};
 const validationSchema = yup.object({
   name: yup.string().required("Name is required!"),
   email: yup
@@ -27,32 +28,21 @@ function NewYoutubeForm() {
         <div className="form-control">
           <label htmlFor="name">Name</label>
           <Field type="text" id="name" name="name" />
-          {useFormikObject.touched.name && useFormikObject.errors.name && (
-            <p className="error">{useFormikObject.errors.name}</p>
-          )}
+          <ErrorMessage name="name" />
         </div>
         <div className="form-control">
           <label htmlFor="email">E-mail</label>
           <Field type="email" id="email" name="email" />
-          {useFormikObject.touched.email && useFormikObject.errors.email ? (
-            <p className="error">{useFormikObject.errors.email}</p>
-          ) : null}
+          <ErrorMessage name="email" />
         </div>
         <div className="form-control">
           <label htmlFor="channel">Channel</label>
           <Field type="text" id="channel" name="channel" />
-          {
-            useFormikObject.touched.channel &&
-              useFormikObject.errors.channel && (
-                <p className="error">{useFormikObject.errors.channel}</p>
-              ) // error message for channel field if it's not provided or empty.  else null  for no error message.
-          }
+          <ErrorMessage name="channel" />
         </div>
-
         <button type="submit"> Submit </button>
       </Form>
     </Formik>
   );
 }
-
 export default NewYoutubeForm;
