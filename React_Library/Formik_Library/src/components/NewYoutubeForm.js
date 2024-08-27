@@ -1,11 +1,13 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
+import TextError from "./TextError";
 const initialValues = {
   name: "",
   email: "",
   channel: "",
   comment: "",
+  address: "",
 };
 const onSubmit = (values_Object) => {
   console.log(values_Object);
@@ -35,18 +37,22 @@ function NewYoutubeForm() {
             name="name"
             placeholder="Enter Your name"
           />
-          <ErrorMessage name="name" />
+          <ErrorMessage name="name" component="div" />
         </div>
+
         <div className="form-control">
           <label htmlFor="email">E-mail</label>
           <Field type="email" id="email" name="email" />
-          <ErrorMessage name="email" />
+          <ErrorMessage name="email" component="div" className="error" />
         </div>
+
         <div className="form-control">
           <label htmlFor="channel">Channel</label>
           <Field type="text" id="channel" name="channel" />
-          <ErrorMessage name="channel" />
+          <ErrorMessage name="channel" component={TextError} />
         </div>
+
+        
         <div className="form-control">
           <label html="comment">Comments</label>
           <Field
@@ -57,6 +63,24 @@ function NewYoutubeForm() {
           />
           <ErrorMessage name="comment" />
         </div>
+
+        <div className="form-control">
+          <label html="address">Address</label>
+          <Field name="address">
+            {(props) => {
+              // Destructuring the props
+              const { meta, field, form } = props;
+              // To hook the input tag with Formik we need to spread Field prop
+              return (
+                <div>
+                  <input type="text" id="address" {...Field} />
+                  {meta.touched && meta.error ? <div>{meta.error}</div> : null}
+                </div>
+              );
+            }}
+          </Field>
+        </div>
+
         <button type="submit"> Submit </button>
       </Form>
     </Formik>
