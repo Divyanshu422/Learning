@@ -37,7 +37,6 @@ const validationSchema = yup.object({
       onSubmit,
       validationSchema
     })
-    console.log(useFormikObject.touched);
     return ( 
     <div>
         <form onSubmit={useFormikObject.handleSubmit}>
