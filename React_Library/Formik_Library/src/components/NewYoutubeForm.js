@@ -52,7 +52,6 @@ function NewYoutubeForm() {
           <ErrorMessage name="channel" component={TextError} />
         </div>
 
-        
         <div className="form-control">
           <label html="comment">Comments</label>
           <Field
@@ -61,7 +60,21 @@ function NewYoutubeForm() {
             name="comment"
             placeholder="Any Comments"
           />
-          <ErrorMessage name="comment" />
+          <ErrorMessage name="comment">
+            {
+              /*
+               * Implementing the render props pattern:
+               * we need to define the arrow function which consume the props where error is defined in children key
+               */
+              (props) => {
+                return (
+                  <div>
+                    <p className="error">{props}</p>
+                  </div>
+                );
+              }
+            }
+          </ErrorMessage>
         </div>
 
         <div className="form-control">
