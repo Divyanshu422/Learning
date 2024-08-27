@@ -8,19 +8,27 @@ const initialValues = {
   channel: "",
   comment: "",
   address: "",
+  social: {
+    facebook: "",
+    instagram: "",
+  },
 };
 const onSubmit = (values_Object) => {
   console.log(values_Object);
 };
-const validationSchema = yup.object({
-  name: yup.string().required("Name is required!"),
-  email: yup
-    .string()
-    .email("Invalid email format")
-    .required("Email is required"),
-  channel: yup.string().required("Channel name is required"),
-  comment: yup.string().required("Enter comment please"),
-});
+    const validationSchema = yup.object({
+      name: yup.string().required("Name is required!"),
+      email: yup
+        .string()
+        .email("Invalid email format")
+        .required("Email is required"),
+      channel: yup.string().required("Channel name is required"),
+      comment: yup.string().required("Enter comment please"),
+      social: yup.object({
+        facebook: yup.string().required("Facebook profile is required"),
+        instagram: yup.string().required("Instagram profile is required"),
+      }),
+    });
 function NewYoutubeForm() {
   return (
     <Formik
@@ -53,7 +61,7 @@ function NewYoutubeForm() {
         </div>
 
         <div className="form-control">
-          <label html="comment">Comments</label>
+          <label htmlFor="comment">Comments</label>
           <Field
             as="textarea"
             id="comment"
@@ -78,7 +86,7 @@ function NewYoutubeForm() {
         </div>
 
         <div className="form-control">
-          <label html="address">Address</label>
+          <label htmlFor="address">Address</label>
           <Field name="address">
             {(props) => {
               // Destructuring the props
@@ -86,12 +94,32 @@ function NewYoutubeForm() {
               // To hook the input tag with Formik we need to spread Field prop
               return (
                 <div>
-                  <input type="text" id="address" {...Field} />
+                  <input type="text" id="address" {...field} />
                   {meta.touched && meta.error ? <div>{meta.error}</div> : null}
                 </div>
               );
             }}
           </Field>
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="facebook">FaceBook Profile</label>
+          <Field type="text" id="facebook" name="social.facebook" />
+          <ErrorMessage
+            name="social.facebook"
+            component="div"
+            className="error"
+          />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="instagram">Instagram Profile</label>
+          <Field type="text" id="instagram" name="social.instagram" />
+          <ErrorMessage
+            name="social.instagram"
+            component="div"
+            className="error"
+          />
         </div>
 
         <button type="submit"> Submit </button>
