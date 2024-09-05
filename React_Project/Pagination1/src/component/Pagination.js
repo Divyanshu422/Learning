@@ -14,8 +14,11 @@ function Pagination() {
   //* Definin the fuction for api call and calling it in useEffect for single time
   const fetchData = async () => {
     const response = await axios.get("https://dummyjson.com/users?limit=0");
-    console.log(response);
+    // * extracting the data from the response and setting it to the useState varaible
+    const data = response?.data?.users;
+    setTableData(data);
   };
+
   return <div></div>;
 }
 
