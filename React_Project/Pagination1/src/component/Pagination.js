@@ -36,15 +36,22 @@ function Pagination() {
   };
 
 
+  //* Defining the function for prev and next:
+  const handlePrev =() => {
+    setCurrentPage((prevState) => {
+      Math.min(prevState-1, 1);
+    });
+  } 
 
-  // * Creating a function to handle the number of items per page
-  // const handleItemsPerPageChange = (e) => {
-  //   setItemsPerPage(parseInt(e.target.value));
-  //   setCurrentPage(1);
-  // };
+  const handleNext =() => {
+    setCurrentPage((prevState) => {
+      Math.min(prevState+1, totalPages);
+    });
+  }
 
-
-
+  const handlePageClick = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  }
 
   return (
     <div>
@@ -72,6 +79,19 @@ function Pagination() {
           }
         </tbody>
       </table>
+      <div className="pagination">
+        <button onClick = {handlePrev} disabled = {currentPage ===1}>Prev</button>
+        {
+          Array.from({ length: totalPages }, (_, index) => (
+            <button onClick ={() => {handlePageClick(index+1)}} 
+            className={currentPage === index + 1? "active" : ""}  // * adding active class to the current page button
+            >
+              {index + 1}
+            </button>
+          ))
+        }
+        <button onClick={handleNext} disabled = {currentPage === totalPages}>Next</button>
+      </div>
     </div>
   );
 }
