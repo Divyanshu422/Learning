@@ -6,8 +6,17 @@
     <title>Commit 1</title>
   </head>
   <body>
-    <div id="root">
-      <h1>Hello world!</h1>
-    </div>
+    <div id="root"></div>
+
+    <script>
+      /*
+       * Creating the element and populating the element with the data -> innerHTML or textContent
+       */
+      const text = "Hello, World! from javaScript";
+      const heading = document.createElement("h1");
+      heading.textContent = text;
+      const root = document.getElementById("root");
+      root.appendChild(heading);
+    </script>
   </body>
 </html>
