@@ -18,3 +18,5 @@
   - Using CDN: 'Content Delivery Networks'
 
 # commit 5: Providing the attribute to the react element
+
+# commit 6: Adding the CSS to the code
