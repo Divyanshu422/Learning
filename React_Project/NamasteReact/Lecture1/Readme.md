@@ -20,3 +20,7 @@
 # commit 5: Providing the attribute to the react element
 
 # commit 6: Adding the CSS to the code
+
+# commit 7: Creating the complex Structure
+
+- File used index3.html and App2.js
