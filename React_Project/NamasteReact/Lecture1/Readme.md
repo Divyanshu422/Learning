@@ -24,3 +24,5 @@
 # commit 7: Creating the complex Structure
 
 - File used index3.html and App2.js
+
+# commit 8: Providing the Children Structure to react [Complex Structure]
