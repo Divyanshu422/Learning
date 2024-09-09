@@ -23,3 +23,19 @@ rightButton.addEventListener("click", () => {
     basket2Count.innerHTML = secondBasketAppleCount;
   }
 });
+
+// Selecting the LEFT arrow and adding the event Listener for the LEFT button
+
+const leftButton = document.querySelector(".left-arrow ");
+
+leftButton.addEventListener("click", () => {
+  if (secondBasketAppleCount > 0) {
+    secondBasketAppleCount--;
+    firstBasketAppleCount++;
+    //* Updating the Dom value:
+    basket1Count.innerHTML = firstBasketAppleCount;
+    basket2Count.innerHTML = secondBasketAppleCount;
+  }
+});
+
+

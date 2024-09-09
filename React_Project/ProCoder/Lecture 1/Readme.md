@@ -8,6 +8,8 @@
 
 - Commit 1: Prepared the skeleton of the project
 - Commit 2: making the values dynamic for the basket rather than hard coding values
+- Commit 3: Provided the functionality for right arrow
+- Commit 4: Provided the functionality for left arrow
 
 # knowledge:
 
