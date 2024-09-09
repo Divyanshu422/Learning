@@ -8,3 +8,7 @@
 
 - Commit 1: Prepared the skeleton of the project
 - Commit 2: making the values dynamic for the basket rather than hard coding values
+
+# knowledge:
+
+- title attribute used in the html: it is used to display the conent/title when we are hovering
