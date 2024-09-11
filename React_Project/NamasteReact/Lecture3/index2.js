@@ -2,12 +2,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+const data = 100;
 const TitleComponent = () => (
   <div>
     <h1>this is the title component</h1>
+    {/* Injecting the js inside the jsx -> using the curly brackets */}
+    <h2>{data}</h2>
+    {console.log("js code inside the jsx")}
   </div>
 );
-//! React functional component: it is nothing but a function which return the JSX
+
 const Heading = () => (
   <div>
     <TitleComponent />
