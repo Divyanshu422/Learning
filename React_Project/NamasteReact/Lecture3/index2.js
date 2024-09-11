@@ -12,5 +12,9 @@ const jsxElement = (
     <h2>Thansks for visiting the react code</h2>
   </div>
 );
+
+//! React functional component: it is nothing but a function which return the JSX
+const Heading = () => <h1> This is functional component </h1>;
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(jsxElement);
+root.render(<Heading />);

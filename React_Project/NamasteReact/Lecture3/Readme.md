@@ -12,3 +12,14 @@
 
 - To write JSX across multiple lines, you need to enclose the code inside `parentheses ()` for proper formatting.
 - JSX must be wrapped in a single parent element, such as a `<div> or <React.Fragment>` component. If there are multiple root elements, they should be wrapped inside a parent container or fragment.
+
+# React Components:
+
+- There are 2 types of component in react:
+
+  - class_based component => not used
+  - functional component -> a Js Function which return the jsx
+
+- The name of functional component shall starts in capital letter
+- To render the functional component we need to use the angular bracket. eg:
+  - Let suppose we have Header component => so to render it we need to use `root.render<Header/>`
