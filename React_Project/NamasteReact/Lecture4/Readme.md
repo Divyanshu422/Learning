@@ -9,4 +9,4 @@
 # Lecture 4 Step and time Stamping:
 
 - At 19 min: we added the logo in the header component
-- 
+- At 35 minutes: Create the Body structure with no css and no content only the heading 

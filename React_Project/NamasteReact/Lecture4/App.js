@@ -1,6 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import logo from "./Assets/FoodLog.png";
+
+
+
+
+
+
+
+
 export const Header = () => {
   return (
     <div className="header-container">
@@ -19,10 +27,34 @@ export const Header = () => {
   );
 };
 
+const RestaurantCard = () => {
+  return(
+    <div>
+      <h3>Meghana Foods</h3>
+    </div>
+  )
+} 
+
+const Body = () => {
+  return (
+    <div className='body'>
+      <div>
+        <h1>Search Content</h1>
+      </div> 
+      <div className="restaurant-container">
+        <RestaurantCard/>
+      </div>
+    </div>
+  );
+}
+
+
+
 const App = () => {
   return (
     <div className="app">
       <Header />
+      <Body/>
     </div>
   );
 };
