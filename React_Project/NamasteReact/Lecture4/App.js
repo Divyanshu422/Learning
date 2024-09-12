@@ -27,10 +27,19 @@ export const Header = () => {
   );
 };
 
+// * Inline style injected in the Restaurant container
+const styleCard={
+  backgroundColor: '#FFE5CF',
+}
 const RestaurantCard = () => {
   return(
-    <div>
-      <h3>Meghana Foods</h3>
+    <div className="restaurant-card" style={styleCard}>
+      {/* Using 2 brackets for providing the styles -> outer bracket represent the jsx and inner bracket -> Css_object */}
+      <img src="https://b.zmtcdn.com/data/reviews_photos/96d/7c3548c12a019085cb6f8cca8e79496d_1641470996.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*" alt = 'res-logo' className="image-card"/>
+      <h3 style={{color: '#557C56' }}>Dhaba Estd 1986 Delhi</h3>
+      <h4> North Indian, Desserts</h4>
+      <h4> 4.4 stars</h4>
+      <h4> 38 min </h4>
     </div>
   )
 } 
@@ -39,9 +48,21 @@ const Body = () => {
   return (
     <div className='body'>
       <div>
-        <h1>Search Content</h1>
+        <h3>Search Content</h3>
       </div> 
       <div className="restaurant-container">
+        <RestaurantCard/>
+        <RestaurantCard/>
+        <RestaurantCard/>
+        <RestaurantCard/>
+        <RestaurantCard/>
+        <RestaurantCard/>
+        <RestaurantCard/>
+        <RestaurantCard/>
+        <RestaurantCard/>
+        <RestaurantCard/>
+        <RestaurantCard/>
+        <RestaurantCard/>
         <RestaurantCard/>
       </div>
     </div>
