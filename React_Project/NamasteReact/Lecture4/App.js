@@ -66,8 +66,7 @@ export const Header = () => {
 const styleCard = {
   backgroundColor: "#FFE5CF",
 };
-const RestaurantCard = ({ resData }) => {
-  console.log("the resData is ", resData);
+const RestaurantCard = ({ resData  }) => {
   // Destructuting
   const { name, cloudinaryImageId, costForTwo, cuisines, avgRating } = resData;
   return (
@@ -96,8 +95,8 @@ const Body = () => {
         <h3>Search Content</h3>
       </div>
       <div className="restaurant-container">
-        {data.map((data) => (
-          <RestaurantCard resData={data.info} />
+        {data.map((data, index) => (
+          <RestaurantCard key={data?.info?.id} resData={data.info} />
         ))}
       </div>
     </div>
