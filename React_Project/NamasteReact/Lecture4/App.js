@@ -24,8 +24,8 @@ export const Header = () => {
 const styleCard = {
   backgroundColor: "#FFE5CF",
 };
-const RestaurantCard = (props) => {
-  console.log(props);
+const RestaurantCard = ({ resName, cusine, rating }) => {
+  console.log(resName, cusine, rating);
   return (
     <div className="restaurant-card" style={styleCard}>
       {/* Using 2 brackets for providing the styles -> outer bracket represent the jsx and inner bracket -> Css_object */}
@@ -34,9 +34,9 @@ const RestaurantCard = (props) => {
         alt="res-logo"
         className="image-card"
       />
-      <h3 style={{ color: "#557C56" }}>{props.resName}</h3>
-      <h4> {props.cusine}</h4>
-      <h4> 4.4 stars</h4>
+      <h3 style={{ color: "#557C56" }}>{resName}</h3>
+      <h4> {cusine}</h4>
+      <h4> {rating}</h4>
       <h4> 38 min </h4>
     </div>
   );
@@ -52,8 +52,13 @@ const Body = () => {
         <RestaurantCard
           resName="Dhaba Estd 1986 Delhi"
           cusine="North Indian, Desserts"
+          rating={4.4}
         />
-        <RestaurantCard resName="Burger King" cusine="Fast Food, Burgers" />
+        <RestaurantCard
+          resName={"Burger King"}
+          cusine="Fast Food, Burgers"
+          rating="4.2"
+        />
       </div>
     </div>
   );
