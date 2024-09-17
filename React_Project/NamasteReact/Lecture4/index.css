@@ -24,9 +24,8 @@
 
 .restaurant-card {
   width: 200px;
-  height: 350px;
+  height: 40 0px;
   padding: 5px;
-  overflow: hidden;
 }
 
 .restaurant-card:hover {
