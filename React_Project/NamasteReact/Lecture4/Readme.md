@@ -11,3 +11,8 @@
 - At 19 min: we added the logo in the header component
 - At 35 minutes: Create the Body structure with no css and no content only the heading
 - At 59 minutes: Creating the Restaurant card with dynamic data: `Using Props`: passing the props to component and reading the props in the component
+
+
+
+# To Do:
+1. naming convention -> in named export -> the name of import shall be same as name of export whereas in default export -> can be different
