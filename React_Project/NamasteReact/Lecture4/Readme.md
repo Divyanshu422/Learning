@@ -12,11 +12,16 @@
 - At 35 minutes: Create the Body structure with no css and no content only the heading
 - At 59 minutes: Creating the Restaurant card with dynamic data: `Using Props`: passing the props to component and reading the props in the component
 
-
-
 # To Do:
+
 1. naming convention -> in named export -> the name of import shall be same as name of export whereas in default export -> can be different
 
+---
 
------------------------------------------------
 # Lecture 5: let get hook
+
+- Compartmentalise the application into the component -> rather than placing whole code inside the App.js
+- the extension used for the component is either `jsx or js`. [ No difference ]
+  - Technically, .jsx is used to indicate that the file contains JSX syntax, which allows writing HTML-like code inside JavaScript.
+  - However, many projects just use .js even when JSX is used, and modern tooling (like Babel) is capable of handling both .js and .jsx files the same way.
+  - So, in practice, there is no functional difference if your environment is set up correctly to handle JSX in .js files.
