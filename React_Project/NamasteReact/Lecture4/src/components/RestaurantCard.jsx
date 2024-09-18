@@ -1,5 +1,6 @@
 import React from 'react'
 
+import {CDN_URL} from '../utils/url'
 
 function RestaurantCard({resData}) {
     const styleCard = {
@@ -12,7 +13,7 @@ function RestaurantCard({resData}) {
         {/* Using 2 brackets for providing the styles -> outer bracket represent the jsx and inner bracket -> Css_object */}
         <img
           src={
-            "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+            CDN_URL +
             cloudinaryImageId
           }
           alt="res-logo"

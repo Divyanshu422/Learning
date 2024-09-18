@@ -1,5 +1,5 @@
 import React from 'react'
-import { data } from '../../data'
+import {data} from '../utils/mockData'
 import RestaurantCard from './RestaurantCard'
 function Body() {
   return (

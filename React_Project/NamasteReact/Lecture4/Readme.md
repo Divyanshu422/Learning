@@ -25,3 +25,7 @@
   - Technically, .jsx is used to indicate that the file contains JSX syntax, which allows writing HTML-like code inside JavaScript.
   - However, many projects just use .js even when JSX is used, and modern tooling (like Babel) is capable of handling both .js and .jsx files the same way.
   - So, in practice, there is no functional difference if your environment is set up correctly to handle JSX in .js files.
+- Never place the `hardcoded data like (mockData, Url etc)` into the component file rather create a folder with name like
+  - utils
+  - constant/config etc and place the hardcoded data in this folder
+  - The name shall start with small letters
