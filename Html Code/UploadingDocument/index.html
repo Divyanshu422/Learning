@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex w-screen h-screen items-center justify-center">
+      <div class="px-8 py-4 border">
+        <input type="file" multiple style="display: none" id="file-input" />
+        <label
+          for="file-input"
+          className="flex flex-col bg-red-600 items-center justify-center cursor-pointer"
+        >
+          <span className="text-4xl mb-2">📂</span>
+          <span className="text-gray-500">
+            Drag and drop files here or click to select
+          </span>
+        </label>
+      </div>
+    </div>
+  </body>
+</html>
