@@ -42,3 +42,13 @@
   flex-wrap: wrap;
   gap: 10px;
 }
+
+.fliter {
+  padding: 10px;
+}
+
+.filter-btn {
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
