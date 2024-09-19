@@ -13,3 +13,7 @@
 # React code for input tag using Tailwind css:
 
 ![React_Code of input tag](./Photo/Tailwind.png)
+
+# UI of the code:
+
+![UI_of_code](./Photo/UI.png)
