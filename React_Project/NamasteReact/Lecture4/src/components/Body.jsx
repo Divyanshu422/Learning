@@ -3,7 +3,6 @@ import {data} from '../utils/mockData'
 import RestaurantCard from './RestaurantCard'
 import { useState } from'react';
 function Body() {
-    console.log(data[0].info);
   // Creating the state_Variable whose value changes with the onClick of button
   const [filteredData, setFilteredData] = useState(data);
   return (
@@ -12,7 +11,7 @@ function Body() {
             <div className='fliter'>
                 <button className = 'filter-btn' onClick={()=>{
                     // Filtering the data based on cost for two
-                    setFilteredData(data.filter(item => item.info.avgRating >= 4.8))
+                    setFilteredData(data.filter(item => item.info.avgRating >= 4.5))
                 }}>Top rated button</button>
                 
             </div>
@@ -27,3 +26,8 @@ function Body() {
 }
 
 export default Body
+
+
+
+
+

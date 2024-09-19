@@ -35,3 +35,9 @@
 - By top rated restaurant, we means rating is greater than 4.
 - Create the button and use the onClick method which calls the callback function [becoz we are passing the data parameter]
 - create the state variable and onClick update the state variable -> on this state variable call the map function
+
+### Last 25 minutes of lecture 5:
+
+- The author discuss about `Reconciliation algorithm or React Fiber`
+- `Diffing Algorithm`
+- `Virtual DOM`
