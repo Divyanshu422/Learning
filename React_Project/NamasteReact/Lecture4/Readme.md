@@ -53,7 +53,10 @@
 - It takes 2 parameters: a `callback function` and `dependencies array`
 - Imported as named_import
 - the callback function in useEffect is called after the rendering of the page.
+- Now we will use the useEffect hook to make the `API call`
+- In the coding, we have created the state variable `filteredData` and assigned the empty array to it not the null value becoz map function is called on the array.
 
 ### See video: Time stamp Lecture 6:
 
-- Using debugger for checking useEffect [ in inspect window ] => b
+- Using debugger for checking useEffect [ in inspect window ] => at 25 minutes post
+- `Optional chaining` -> 48 min

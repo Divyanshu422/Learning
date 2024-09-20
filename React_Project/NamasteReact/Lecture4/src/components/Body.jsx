@@ -2,16 +2,24 @@ import React from 'react'
 import {data} from '../utils/mockData'
 import RestaurantCard from './RestaurantCard'
 import { useState, useEffect } from'react';
-function Body() {
-  // Creating the state_Variable whose value changes with the onClick of button
-  const [filteredData, setFilteredData] = useState(data);
 
-  console.log('Body is rendered ');
+
+function Body() {
+
+  const [filteredData, setFilteredData] = useState([]);  
+
   //* Using the useEffect hook: 
   useEffect(() =>{
-    debugger;
-    console.log('useEffect is called after the rendering the body function has been rendered');
+    fetchData()
   },[])
+
+  async function fetchData() {
+   const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65200&lng=77.16630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+   const response = await data.json();
+   let data1 = response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+   setFilteredData(data1);
+   console.log(response);
+  }
   return (
     <div>
         <div className="body">
@@ -33,8 +41,3 @@ function Body() {
 }
 
 export default Body
-
-
-
-
-
