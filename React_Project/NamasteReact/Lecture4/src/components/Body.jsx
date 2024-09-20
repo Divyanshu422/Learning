@@ -1,10 +1,17 @@
 import React from 'react'
 import {data} from '../utils/mockData'
 import RestaurantCard from './RestaurantCard'
-import { useState } from'react';
+import { useState, useEffect } from'react';
 function Body() {
   // Creating the state_Variable whose value changes with the onClick of button
   const [filteredData, setFilteredData] = useState(data);
+
+  console.log('Body is rendered ');
+  //* Using the useEffect hook: 
+  useEffect(() =>{
+    debugger;
+    console.log('useEffect is called after the rendering the body function has been rendered');
+  },[])
   return (
     <div>
         <div className="body">

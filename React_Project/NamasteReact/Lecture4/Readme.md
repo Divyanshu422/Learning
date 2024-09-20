@@ -41,3 +41,19 @@
 - The author discuss about `Reconciliation algorithm or React Fiber`
 - `Diffing Algorithm`
 - `Virtual DOM`
+
+# Lecture 6: Exploring the World -> Understanding the API call
+
+- Understand the `Separation of concern` and `Single Responsibility principle` in monolithic architecture. [ Done in starting of 10 minutes of lecture ]
+- To make an Api Call -> we use following Approach & `useEffect` Hook:
+  - As soon the page loads on browser -> we render the page and post render we make the API call.
+
+## useEffect Hook
+
+- It takes 2 parameters: a `callback function` and `dependencies array`
+- Imported as named_import
+- the callback function in useEffect is called after the rendering of the page.
+
+### See video: Time stamp Lecture 6:
+
+- Using debugger for checking useEffect [ in inspect window ] => b
