@@ -62,8 +62,13 @@
 - if the state variable is empty then we can apply spinner loader or
 - if the state variable is not empty [ i.e. api call has been made ] then we can use the cards
 
+## Shimmer UI
+
+- A shimmer lets people know that a section of information is loading without blocking other UI elements from rendering.
+
 ### See video: Time stamp Lecture 6:
 
 - Using debugger for checking useEffect [ in inspect window ] => at 25 minutes post
 - `Optional chaining` -> 48 min
 - `Spinner loader` -> 50 min
+- `Shimmer UI` -> 51 min

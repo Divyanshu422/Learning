@@ -1,6 +1,7 @@
 import React from 'react'
 import RestaurantCard from './RestaurantCard'
 import { useState, useEffect } from'react';
+import Shimmer from './Shimmer';
 
 
 function Body() {
@@ -20,7 +21,7 @@ function Body() {
    console.log(response);
   }
 
-  return (filteredData.length === 0)? (<h1>Loading the data</h1>):(
+  return (filteredData.length === 0)? (<Shimmer/>):(
     <div>
         <div className="body">
             <div className='fliter'>

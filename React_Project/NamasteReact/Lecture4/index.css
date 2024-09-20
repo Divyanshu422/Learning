@@ -52,3 +52,23 @@
   cursor: pointer;
   font-size: 20px;
 }
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px;
+}
+
+.shimmer-card {
+  width: 200px;
+  height: 300px;
+  padding: 5px;
+  background-color: #ffe5cf;
+}
+
+.shimmer-btn {
+  margin: 10px;
+  width: 180px;
+  height: 30px;
+}
