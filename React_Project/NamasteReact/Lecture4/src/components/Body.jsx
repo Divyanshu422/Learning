@@ -1,5 +1,4 @@
 import React from 'react'
-import {data} from '../utils/mockData'
 import RestaurantCard from './RestaurantCard'
 import { useState, useEffect } from'react';
 
@@ -20,7 +19,8 @@ function Body() {
    setFilteredData(data1);
    console.log(response);
   }
-  return (
+
+  return (filteredData.length === 0)? (<h1>Loading the data</h1>):(
     <div>
         <div className="body">
             <div className='fliter'>
@@ -39,5 +39,6 @@ function Body() {
     </div>
   )
 }
+
 
 export default Body

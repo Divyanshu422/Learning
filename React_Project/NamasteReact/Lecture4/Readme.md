@@ -56,7 +56,14 @@
 - Now we will use the useEffect hook to make the `API call`
 - In the coding, we have created the state variable `filteredData` and assigned the empty array to it not the null value becoz map function is called on the array.
 
+## Spinner loader Logic:
+
+- the state variable on which we have called the map function -> must be checked if it is empty or not.
+- if the state variable is empty then we can apply spinner loader or
+- if the state variable is not empty [ i.e. api call has been made ] then we can use the cards
+
 ### See video: Time stamp Lecture 6:
 
 - Using debugger for checking useEffect [ in inspect window ] => at 25 minutes post
 - `Optional chaining` -> 48 min
+- `Spinner loader` -> 50 min
