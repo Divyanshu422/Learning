@@ -78,3 +78,18 @@
   height: 150px;
   background-color: #f0f0f0;
 }
+
+.btn {
+  background-color: #4caf50; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 10px 20px; /* Add some padding */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underlines */
+  display: inline-block; /* Make the button inline */
+  font-size: 16px; /* Set font size */
+  margin: 5px 2px; /* Add some margin */
+  cursor: pointer; /* Add a pointer cursor on hover */
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
