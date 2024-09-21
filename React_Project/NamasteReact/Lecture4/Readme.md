@@ -114,3 +114,8 @@
 - import the Hook
 - const error = useRouteError(); // Get the error object
 - this object has certain properties which we can use on the UI. I have consoled it -> Please check.
+
+### Providing the children Routes [46 min]
+
+- In React Router, nested routes (or children routes) allow you to create a parent route with multiple child routes. This setup is useful when you want a layout (like a sidebar or navbar) to stay the same, while the content inside the layout changes based on the child route.
+- `Outlet`: This is where the child route’s component will be rendered. Whenever you navigate to a child route, React Router will replace the Outlet with the appropriate child component (e.g., Home, About, or Contact).

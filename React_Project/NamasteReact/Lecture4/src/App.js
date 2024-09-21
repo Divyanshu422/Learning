@@ -15,16 +15,13 @@ const App = () => {
     {
       path: "/",
       element: <AppLayout />,
+      children: [
+        { path: "/" , Component: Body},
+        { path: "/about", element: <About /> },
+        { path: "/contactus", Component: ContactUs }
+      ],
       errorElement: <ErrorPage/>
     },
-    {
-      path: "/about",
-      Component: About,
-    },
-    {
-      path: "/contactus",
-      Component: ContactUs,
-    }
   ]);
   return (
     // * Consuming the configuration and providing to the application
