@@ -57,6 +57,14 @@
 - Now we will use the useEffect hook to make the `API call`
 - In the coding, we have created the state variable `filteredData` and assigned the empty array to it not the null value becoz map function is called on the array.
 
+#### `Lecture 7: useEffect `
+
+- generally useEffect function is called after the rendering of the page. But due to the dependencies array, we control the useEffect hook -> when to call.
+- Cases:
+  - case1: when there is no dependency array -> useEffect is called, `everytime` the rendering of the page
+  - case2: when there is empty dependency array -> useEffect is called only `first time` when the page is rendered
+  - case3: when there is dependency mentioned inside the array -> useEffect is called only when the the dependency changes.
+
 ## Spinner loader Logic:
 
 - the state variable on which we have called the map function -> must be checked if it is empty or not.
@@ -72,7 +80,7 @@
 - To provide the search functionality to the code -> we have created an input field and button.
 - To track the input field we have used the state variable.
   - To get the value a user types into an input field, we need to add an `onChange handler`. This handler uses a callback function and receives an event (e). To get the user’s input, we access `e.target.value`
-- 
+-
 
 ### See video: Time stamp Lecture 6:
 
@@ -83,3 +91,15 @@
 - Note: Whenever there is a change in a state variable, the component where the state is used re-renders, not the entire application. Only that component (or parts of it) where the state variable is used will be affected by the re-render -> `1:25 min`
   - In the coding when we click on the login button of header section, the value of state varible changes to logOut. the whole header section is rendered --> not the application or the button but whole component.
 - `Search functionality` -> 1:36:44 minutes
+
+# Lecture 7: Finding the Path @ Routing
+
+- Install the react-router-dom [ Version 6 ] library.
+- Develop the routing configuration in `App.js` file:
+
+  - Import the create `createBrowserRouter` & use this createBrowserRouter function to provide the routing configuration. This function takes an `array of object` where you can specify which components should be displayed for different URLs (routes).
+  - The object passed to createBrowserRouter has the following properties:
+    - `path`: This defines the URL for the route.
+    - `element/Component`: The React component that should be rendered when the user visits the specified URL.
+
+- Now after creating the routes for the application, we need to provide the router configuration to the application for this we need to import `RouterProvider`
