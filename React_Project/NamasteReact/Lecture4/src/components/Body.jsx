@@ -21,6 +21,7 @@ function Body() {
    console.log(response);
   }
 
+  // * filteredData is the state Variable which is populated using Api call
   return (filteredData.length === 0)? (<Shimmer/>):(
     <div>
         <div className="body">
@@ -39,6 +40,8 @@ function Body() {
         </div>
     </div>
   )
+
+
 }
 
 

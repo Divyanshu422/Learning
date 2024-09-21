@@ -47,11 +47,12 @@
 - Understand the `Separation of concern` and `Single Responsibility principle` in monolithic architecture. [ Done in starting of 10 minutes of lecture ]
 - To make an Api Call -> we use following Approach & `useEffect` Hook:
   - As soon the page loads on browser -> we render the page and post render we make the API call.
+- Deleted the mockData file from the utils folder as we are using the API to populate the state variable.
 
 ## useEffect Hook
 
-- It takes 2 parameters: a `callback function` and `dependencies array`
 - Imported as named_import
+- It takes 2 parameters: a `callback function` and `dependencies array`
 - the callback function in useEffect is called after the rendering of the page.
 - Now we will use the useEffect hook to make the `API call`
 - In the coding, we have created the state variable `filteredData` and assigned the empty array to it not the null value becoz map function is called on the array.
