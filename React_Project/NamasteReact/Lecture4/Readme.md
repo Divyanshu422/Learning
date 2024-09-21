@@ -73,3 +73,5 @@
 - `Optional chaining` -> 48 min
 - `Spinner loader` -> 50 min
 - `Shimmer UI` -> 51 min
+- Note: Whenever there is a change in a state variable, the component where the state is used re-renders, not the entire application. Only that component (or parts of it) where the state variable is used will be affected by the re-render -> `1:25 min`
+  - In the coding when we click on the login button of header section, the value of state varible changes to logOut. the whole header section is rendered --> not the application or the button but whole component.
