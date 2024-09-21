@@ -103,3 +103,8 @@
     - `element/Component`: The React component that should be rendered when the user visits the specified URL.
 
 - Now after creating the routes for the application, we need to provide the router configuration to the application for this we need to import `RouterProvider`
+
+### errorElement:
+
+- In createBrowserRouter, there is an additional property called `errorElement` that you can use to handle errors, such as when a user navigates to a route that doesn’t exist (404 errors) or any other routing errors.
+- `errorElement`: This is used to specify the component that will be shown if an error occurs while loading a route, such as a wrong path or a problem with data fetching.
