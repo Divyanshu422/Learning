@@ -67,6 +67,10 @@
 
 - A shimmer lets people know that a section of information is loading without blocking other UI elements from rendering.
 
+## Search functionality:
+
+-
+
 ### See video: Time stamp Lecture 6:
 
 - Using debugger for checking useEffect [ in inspect window ] => at 25 minutes post
@@ -75,3 +79,4 @@
 - `Shimmer UI` -> 51 min
 - Note: Whenever there is a change in a state variable, the component where the state is used re-renders, not the entire application. Only that component (or parts of it) where the state variable is used will be affected by the re-render -> `1:25 min`
   - In the coding when we click on the login button of header section, the value of state varible changes to logOut. the whole header section is rendered --> not the application or the button but whole component.
+- `Search functionality` -> 1:36:44 minutes

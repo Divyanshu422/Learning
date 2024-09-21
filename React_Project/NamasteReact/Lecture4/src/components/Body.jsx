@@ -8,6 +8,9 @@ function Body() {
 
   const [filteredData, setFilteredData] = useState([]);  
 
+  const [searchText, setSearchText] = useState();
+  console.log(searchText);
+  
   //* Using the useEffect hook: 
   useEffect(() =>{
     fetchData()
@@ -17,8 +20,7 @@ function Body() {
    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65200&lng=77.16630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
    const response = await data.json();
    let data1 = response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-   setFilteredData(data1);
-   console.log(response);
+   setFilteredData(data1);;
   }
 
   // * filteredData is the state Variable which is populated using Api call
@@ -26,9 +28,18 @@ function Body() {
     <div>
         <div className="body">
             <div className='fliter'>
+              <div className = 'search-container'>
+
+
+                <input type="text" placeholder="Search for restaurants" value={searchText} onChange={(e) => { setSearchText(e.target.value)}}/>
+                <button className = 'search-btn' onClick={() => {
+                  console.log(searchText);
+                }}>Search</button>
+
+              </div>
                 <button className = 'filter-btn' onClick={()=>{
                     // Filtering the data based on cost for two
-                    setFilteredData(data.filter(item => item.info.avgRating >= 4.5))
+                    setFilteredData(filteredData.filter(item => item.info.avgRating >= 4.5))
                 }}>Top rated button</button>
                 
             </div>
@@ -45,4 +56,4 @@ function Body() {
 }
 
 
-export default Body
+export default Body 

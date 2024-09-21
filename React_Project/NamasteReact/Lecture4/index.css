@@ -45,6 +45,9 @@
 
 .fliter {
   padding: 10px;
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
 }
 
 .filter-btn {
