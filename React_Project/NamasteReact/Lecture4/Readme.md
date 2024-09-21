@@ -108,3 +108,9 @@
 
 - In createBrowserRouter, there is an additional property called `errorElement` that you can use to handle errors, such as when a user navigates to a route that doesn’t exist (404 errors) or any other routing errors.
 - `errorElement`: This is used to specify the component that will be shown if an error occurs while loading a route, such as a wrong path or a problem with data fetching.
+
+### Hook provided by react-router-dom: `useRouteError` [36 min]
+
+- import the Hook
+- const error = useRouteError(); // Get the error object
+- this object has certain properties which we can use on the UI. I have consoled it -> Please check.
