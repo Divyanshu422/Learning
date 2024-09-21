@@ -3,7 +3,6 @@ import logo from '../Assets/FoodLogo.png'
 function Header() {
 
   const [ btnName, setBtnName ] =useState('LogIn')
-  console.log('Whole component is rendered when the value of button changes');
   return (
     <div>
     <div className="header-container">

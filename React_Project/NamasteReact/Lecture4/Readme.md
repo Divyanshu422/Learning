@@ -69,7 +69,10 @@
 
 ## Search functionality:
 
--
+- To provide the search functionality to the code -> we have created an input field and button.
+- To track the input field we have used the state variable.
+  - To get the value a user types into an input field, we need to add an `onChange handler`. This handler uses a callback function and receives an event (e). To get the user’s input, we access `e.target.value`
+- 
 
 ### See video: Time stamp Lecture 6:
 
