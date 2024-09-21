@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import AppLayout from "./components/AppLayout";
 import About from "./components/About";
+import ContactUs from "./components/ContactUs";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 const App = () => {
@@ -17,6 +18,10 @@ const App = () => {
     {
       path: "/about",
       Component: About,
+    },
+    {
+      path: "/contactus",
+      Component: ContactUs,
     }
   ]);
   return (
