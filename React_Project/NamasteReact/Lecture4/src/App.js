@@ -18,7 +18,7 @@ const App = () => {
       children: [
         { path: "/" , Component: Body},
         { path: "/about", element: <About /> },
-        { path: "/contactus", Component: ContactUs }
+        { path: "/contactus", Component: ContactUs },
       ],
       errorElement: <ErrorPage/>
     },
@@ -31,3 +31,4 @@ const App = () => {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
+ 
