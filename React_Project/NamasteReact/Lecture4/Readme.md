@@ -129,4 +129,7 @@
   - server-side routing
 
 ### Dynamic routing in react [ 1 hour 12 min ]
- 
+
+### useParam hook [ 2hour ]
+
+- The useParams hook is part of the React Router library, and it is used to access the parameters of the current route. When building applications with dynamic routes, useParams helps retrieve route parameters, which can then be used to fetch data, display specific content, or perform other operations based on the route.

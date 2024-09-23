@@ -2,6 +2,7 @@ import React from 'react'
 import RestaurantCard from './RestaurantCard'
 import { useState, useEffect } from'react';
 import Shimmer from './Shimmer';
+import { Link } from 'react-router-dom';
 
 
 function Body() {
@@ -23,8 +24,8 @@ function Body() {
    setFilteredData(data1);
    setData(data1);
   }
-
-  console.log('component called');
+  
+  console.log(filteredData);
   // * filteredData is the state Variable which is populated using Api call
   return (filteredData.length === 0)? (<Shimmer/>):(
     <div>
@@ -48,7 +49,9 @@ function Body() {
             </div>
             <div className="restaurant-container">
                 {filteredData.map((data, index) => (
-                <RestaurantCard key={data?.info?.id} resData={data.info} />
+                  <Link to={`/restaurant/${data?.info?.id}`}   className="no-underline" key={data?.info?.id}>
+                    <RestaurantCard resData={data.info} />
+                  </Link>
                 ))}
             </div>
         </div>
