@@ -6,6 +6,7 @@ import AppLayout from "./components/AppLayout";
 import About from "./components/About";
 import ContactUs from "./components/ContactUs";
 import ErrorPage from "./components/ErrorPage";
+import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 const App = () => {
@@ -16,19 +17,19 @@ const App = () => {
       path: "/",
       element: <AppLayout />,
       children: [
-        { path: "/" , Component: Body},
+        { path: "/", Component: Body },
         { path: "/about", element: <About /> },
         { path: "/contactus", Component: ContactUs },
+        { path: "/restaurant/:resId", Component: RestaurantMenu },
       ],
-      errorElement: <ErrorPage/>
+      errorElement: <ErrorPage />,
     },
   ]);
   return (
     // * Consuming the configuration and providing to the application
-    <RouterProvider router={appRouter}/>
-  )
+    <RouterProvider router={appRouter} />
+  );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
- 
