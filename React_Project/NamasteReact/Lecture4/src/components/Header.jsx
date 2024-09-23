@@ -25,7 +25,7 @@ function Header() {
           <li>
             <button className="btn" onClick={() => {
                 setBtnName ((value)=> {
-                  return value === 'LogIn'? 'SignUp' : 'LogIn'
+                  return value  === 'LogIn'? 'SignUp' : 'LogIn'
                 })
             }}>{btnName}</button>
           </li>
