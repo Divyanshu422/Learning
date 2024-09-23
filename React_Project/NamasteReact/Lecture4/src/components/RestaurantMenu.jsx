@@ -21,10 +21,10 @@ function RestaurantMenu() {
     }
     const { name , cuisines, cloudinaryImageId } = resInfo?.data?.cards[2]?.card?.card?.info  || {};
    console.log('the data is', resInfo?.data?.cards[2]?.card?.card?.info)
-  return (
+  return (resInfo==null)?(<Shimmer/>): (
     <div>
-        <h1>{name || 'Loading...'}</h1>
-        {cuisines ?<h2>{cuisines.join(", ")}</h2>:null}
+        <h1>{name}</h1>
+        <h2>{cuisines.join(", ")}</h2>
         <img src={imageId+cloudinaryImageId} alt='Loading image'/>
     </div>
   )
