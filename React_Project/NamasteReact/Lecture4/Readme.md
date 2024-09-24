@@ -133,3 +133,11 @@
 ### useParam hook [ 2hour ]
 
 - The useParams hook is part of the React Router library, and it is used to access the parameters of the current route. When building applications with dynamic routes, useParams helps retrieve route parameters, which can then be used to fetch data, display specific content, or perform other operations based on the route.
+
+# Lecture 8: Class Based Component
+
+- In the about Us page, we are creating a class Component which shows the details of the user.
+  - A class Based component extends React.Component
+  - The class Based component has the render function which return the jsx
+  - ![classBasedComponent](./src/Image/1.png)
+  - Just like the functional component, we need to export the classBased component
