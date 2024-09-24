@@ -5,7 +5,7 @@ function About() {
   const data = {
     name: "Divyanshu",
     state: "Uttar Pradesh",
-    contact: "@divyanshu422",
+    contact: "@divyanshu422w",
   };
   return (
     <div>

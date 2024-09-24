@@ -149,6 +149,7 @@
   - Props are consumed using the constructor -> see UserClass.js file.
     - Inside the constructor of the class based component it is mandatory to use super(props) keyword
     - to access the prop -> we need to use the following keyword `this.props`
+      - Usage of the `this` keyword is mandatory.
 
 - Creating the state variable inside the `Class Based component`:
 
