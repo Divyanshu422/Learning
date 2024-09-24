@@ -159,4 +159,8 @@
     - the constructor is the best place to create the state variable and props of the class
       ![ stateVariable](./src/Image/2.png)
 
-    -
+### Updating the state variable in class Based component (37 min)
+
+- Creating the button on click of which the value if count is increased.
+  - In React class-based components, we update the state using the `this.setState()` method.
+  - It takes an object or a function as an argument and merges the changes with the existing state.
