@@ -26,11 +26,14 @@ class UserClass extends React.Component{
             <div className="user-card">
                 <h1>State variable count: {count}</h1>
                 <button onClick={()=>{
+                    //* React inbuilt provides the special function this.setState 
+                    //* this.setState function can be used anywhere inside the class  
+                    //* this.setState -> takes the object & inside the object we have written the logic
                     this.setState({count: this.state.count + 1})
                 }}>Count Increment</button>
                 <h2>Name: {name}</h2>
-                <h3>Location: {state}</h3>
-                <h4>Contact: @{contact}</h4>
+                <h2>Location: {state}</h2>
+                <h2>Contact: {contact}</h2>
             </div>
         )
 
