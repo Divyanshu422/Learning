@@ -10,6 +10,7 @@ class UserClass extends React.Component{
          // Initialize the state
         this.state = {
             count: 0,  // State variable 'count' initialized
+            count2: 2  // State variable count2 initialized
         };
         console.log('the state variable', this.state)
     }
@@ -21,10 +22,11 @@ class UserClass extends React.Component{
         const {name, state, contact} = this.props.props;
         console.log('the contact of client is ', contact)
         // * Destructuring the stateVariable 
-        const {count} = this.state;
+        const {count, count2} = this.state;
         return (
             <div className="user-card">
                 <h1>State variable count: {count}</h1>
+                <h1>2nd state variable count2: {count2}</h1>
                 <h2>Name: {name}</h2>
                 <h3>Location: {state}</h3>
                 <h4>Contact: @{contact}</h4>
