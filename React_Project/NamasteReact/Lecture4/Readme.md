@@ -144,7 +144,19 @@
   - Just like the functional component, we need to export the classBased component
 
 - Passing & consuming the `Props` into the class Based component [ 16 minutes ]
+
   - props are passed -> Similar to the functional component [ see About.js file ]
   - Props are consumed using the constructor -> see UserClass.js file.
     - Inside the constructor of the class based component it is mandatory to use super(props) keyword
     - to access the prop -> we need to use the following keyword `this.props`
+
+- Creating the state variable inside the `Class Based component`:
+
+  - We can create the state variable inside the class based component using the constructor.
+  - State variable is created whenever we created the instance of a class. Let understand this with an analogy ->
+
+    - when we say we are mounting a functional component on the webPage -> it means that we are mounting/invoking the functional component on the UI. on similar line when we say that we are creating an instance of a class based component we mean that we are mounting the class based component on the UI. Hence when we create a instance of a class based component (i.e. mounting it on the UI ) -> The constructor of the class Based component is called.
+    - the constructor is the best place to create the state variable and props of the class
+      ![ stateVariable](./src/Image/2.png)
+
+    -
