@@ -137,7 +137,13 @@
 # Lecture 8: Class Based Component
 
 - In the about Us page, we are creating a class Component which shows the details of the user.
+
   - A class Based component extends React.Component
   - The class Based component has the render function which return the jsx
   - ![classBasedComponent](./src/Image/1.png)
   - Just like the functional component, we need to export the classBased component
+
+- Passing & consuming the `Props` into the class Based component [ 16 minutes ]
+  - props are passed -> Similar to the functional component [ see About.js file ]
+  - Props are consumed using the constructor -> see UserClass.js file.
+    - Inside the constructor of the class based component it is mandatory to use super(props) keyword
