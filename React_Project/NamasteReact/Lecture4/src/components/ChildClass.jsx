@@ -8,6 +8,10 @@ class ChildClass extends Component{
     }
     componentDidMount(){
         console.log('child ComponentDidMount is called');
+        
+    }
+    componentDidUpdate(){
+        console.log('child component Did update called')
     }
 
     render(){
