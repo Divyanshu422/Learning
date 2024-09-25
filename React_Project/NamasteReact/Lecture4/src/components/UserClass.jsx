@@ -28,6 +28,10 @@ class UserClass extends React.Component{
     componentDidUpdate(){
         console.log('Parent component Did update rendered')
     }
+
+    componentWillUnmount(){
+        console.log('component will unmount was called')
+    }
     // Render function inside the class Based componenet
     // Return the jsx
     render(){
