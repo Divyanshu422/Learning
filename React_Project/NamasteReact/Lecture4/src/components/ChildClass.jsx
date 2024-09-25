@@ -4,10 +4,10 @@ import {Component} from "react";
 class ChildClass extends Component{
     constructor(){
         super();
-        console.log('child Constructor is called')
+        console.log('child Constructor is called');
     }
     componentDidMount(){
-        console.log('child ComponentDidMount is called')
+        console.log('child ComponentDidMount is called');
     }
 
     render(){
