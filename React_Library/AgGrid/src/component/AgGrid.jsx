@@ -17,7 +17,7 @@ function AgGrid() {
   
   // Column Definitions: Defines the columns to be displayed.
   const [colDefs, setColDefs] = useState([
-    { field: "make" },
+    { field: "make", checkboxSelection: true },
     { field: "model"},
     { field: "price" },
     { field: "electric" }

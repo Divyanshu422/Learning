@@ -15,3 +15,8 @@
 ## Commit 2: Default Column Definitions
 
 - The example above demonstrates how to configure a single column. To apply this configuration across all columns we can use Default Column Definitions instead.
+
+## Commit 3: CheckBoxSelection Property
+
+- In AG Grid, the checkboxSelection property allows you to add checkboxes to your rows, enabling users to select one or more rows easily. This feature is particularly useful for scenarios where you need to allow multi-row actions, such as deletion, exporting, or processing selected row.
+  - To enable checkboxes in your AG Grid rows, you can set the checkboxSelection property in your column definitions.
