@@ -9,4 +9,9 @@
 - In AG Grid, you can make cells editable by using the editable property in the column definitions (columnDefs). This allows users to modify the data directly within the grid cells.
 
 # Using `filter` key in the Column
+
 - In AG Grid, you can makeIn AG Grid, filtering allows users to narrow down the displayed data based on specific criteria. You can enable filtering on columns by using the filter property in the column definitions (columnDefs cells editable by using the editable property in the column definitions (columnDefs). This allows users to modify the data directly within the grid cells.
+
+## Commit 2: Default Column Definitions
+
+- The example above demonstrates how to configure a single column. To apply this configuration across all columns we can use Default Column Definitions instead.

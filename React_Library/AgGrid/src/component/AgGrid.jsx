@@ -17,11 +17,18 @@ function AgGrid() {
   
   // Column Definitions: Defines the columns to be displayed.
   const [colDefs, setColDefs] = useState([
-    { field: "make", sortable: true,  filter: true },
-    { field: "model", editable: true },
-    { field: "price", filter: true },
+    { field: "make" },
+    { field: "model"},
+    { field: "price" },
     { field: "electric" }
   ]);
+
+  const defaultColDef = {
+    sortable: true,  
+    filter: true,
+    editable: true,
+    flex: 1, // Allows columns to grow and shrink equally  
+  }
   
   return (
     // wrapping container with theme & size
@@ -32,6 +39,7 @@ function AgGrid() {
         <AgGridReact
             rowData={rowData}
             columnDefs={colDefs}
+            defaultColDef={defaultColDef} // Apply default properties to all columns
         />
     </div>
   )
