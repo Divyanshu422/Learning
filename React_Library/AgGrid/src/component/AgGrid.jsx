@@ -28,6 +28,7 @@ function AgGrid() {
     filter: true,
     editable: true,
     flex: 1, // Allows columns to grow and shrink equally  
+    floatingFilter: true,
   }
   
   return (
