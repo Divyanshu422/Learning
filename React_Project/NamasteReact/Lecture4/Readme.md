@@ -165,3 +165,30 @@
 - Creating the button on click of which the value if count is increased.
   - In React class-based components, we update the state using the `this.setState()` method.
   - It takes an object or a function as an argument and merges the changes with the existing state.
+
+# 2 hours extra note:
+
+- Never compare the react life cycle method with functional component
+  - it is definetly wrong when we compare useEffect with componentDidMount(). [ Please dont compare ]
+  - The react life cycle method is used in class based component and useEffect is used in functional component
+
+## Note:
+
+- If there is no dependency array in the `useEffect` of the functional component -> it will be called at every Render. whereas in class Based component
+- The `componentDidMount` is called and after every subsequent render the `componentDidUpdate` is called
+
+## Note: `ComponentWillUnmount()`
+
+- it is called when we are leaving the page.
+
+## Extra:
+
+    In a React application with About, Home, and Contact pages, it may seem like there are three pages.
+    •	However, React is a single-page application (SPA), meaning there is only one page.
+    •	When you click on About, Home, or Contact, the component changes in the UI, but the actual page does not reload.
+
+## Problem in the SPA => Must watch [ 2 hour 23 ]
+
+## return in the useEffect:
+
+- In useEffect, the return statement is used to define a cleanup function. This function runs when the component unmounts or before the effect runs again (if the dependencies change).
