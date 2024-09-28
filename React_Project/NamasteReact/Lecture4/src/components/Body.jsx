@@ -1,25 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import RestaurantCard from './RestaurantCard';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
-
+import { restaurantDataUrl } from '../utils/url';
+import useRestaurantData from '../utils/customHook/useRestaurantData';
 function Body() {
-  const [filteredData, setFilteredData] = useState([]); // Initialize as an empty array
-  const [data, setData] = useState([]); // Initialize as an empty array
+  // const [filteredData, setFilteredData] = useState([]); // Initialize as an empty array
+  // const [data, setData] = useState([]); // Initialize as an empty array
   const [searchText, setSearchText] = useState("");
 
-  // Use the useEffect hook to fetch data on mount
-  useEffect(() => {
-    fetchData();
-  }, []);
+    const {filteredData, loading, data, setFilteredData} = useRestaurantData(restaurantDataUrl)
+    console.log(setFilteredData);
 
-  const fetchData = async () => {
-    const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65200&lng=77.16630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-    const result = await response.json();
-    const restaurants = result?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || []; // Fallback to empty array
-    setFilteredData(restaurants);
-    setData(restaurants);
-  };
 
   // Handle search functionality
   const handleSearch = () => {
@@ -33,9 +25,10 @@ function Body() {
   // Handle filtering by top-rated restaurants
   const filterTopRated = () => {
     setFilteredData(data.filter(item => item.info.avgRating >= 4.5)); // Filter from original data
+    console.log('inside the function ',filteredData)
   };
 
-  return (filteredData.length === 0) ? (
+  return (loading) ? (
     <Shimmer />
   ) : (
     <div>

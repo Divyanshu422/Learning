@@ -192,3 +192,8 @@
 ## return in the useEffect:
 
 - In useEffect, the return statement is used to define a cleanup function. This function runs when the component unmounts or before the effect runs again (if the dependencies change).
+
+# Lecture 9:
+
+- Single page responsibility
+- Custom hook
