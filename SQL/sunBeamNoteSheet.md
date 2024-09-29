@@ -1,7 +1,8 @@
 # Lecture 2:
 
 - Promopt to open the Mysql client in the terminal:
-  - `mysql -u root -p`: is used to log into the MySQL client using the root user account.
+  - `mysql -u ${username} -p`: is used to log into the MySQL client using the root user account.
+    - mysql -u root -p 
   - password: 123456789 in my case
 
 ![Meaning of the command](./Images/1.LoginCommand.png)
@@ -24,4 +25,7 @@
 - In SQL, comments are used to add explanatory notes or annotations to your code. There are 2 type of comments:
 
   A. `Single line comments`: Single-line comments are used for brief notes. You can use two dashes (--) followed by your comment.
-  B. `Multi-Line Comments`: Multi-line comments can span multiple lines and are enclosed within /* and */
+  B. `Multi-Line Comments`: Multi-line comments can span multiple lines and are enclosed within `/* Comment */`
+
+
+### 
