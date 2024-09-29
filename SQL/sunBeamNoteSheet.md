@@ -2,7 +2,7 @@
 
 - Promopt to open the Mysql client in the terminal:
   - `mysql -u ${username} -p`: is used to log into the MySQL client using the root user account.
-    - mysql -u root -p 
+    - mysql -u root -p
   - password: 123456789 in my case
 
 ![Meaning of the command](./Images/1.LoginCommand.png)
@@ -27,5 +27,15 @@
   A. `Single line comments`: Single-line comments are used for brief notes. You can use two dashes (--) followed by your comment.
   B. `Multi-Line Comments`: Multi-line comments can span multiple lines and are enclosed within `/* Comment */`
 
+### Extra: 1 hours 28 minutes
 
-### 
+- the teacher has created a table with the columns as `rollNumber, name & marks` -> with datatype of individual columns as `int, varchar, double`.
+- To populate the data into the table -> the teacher has used `Insert into` command
+
+-- EXTRA:
+
+- In future if we want to see the structure of the table created by use we can use the `DESCRIBE` Commnad.
+  - Syntax:`DESCRIBE ${tableName}`
+  - You can use the DESCRIBE command to view the structure of a table in SQL. It shows important details like the column names, data types, and any constraints (e.g., if a column is a primary key, allows NULL, etc.
+
+![ Describe runned over the Employee table](./Images/2.DescribeCommnad.png)
