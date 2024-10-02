@@ -39,3 +39,22 @@
   - You can use the DESCRIBE command to view the structure of a table in SQL. It shows important details like the column names, data types, and any constraints (e.g., if a column is a primary key, allows NULL, etc.
 
 ![ Describe runned over the Employee table](./Images/2.DescribeCommnad.png)
+
+# Lecture 3: [ 1hour 7 min]: char vs varchar vs Text
+
+### Syntax for table creation in schema/dataBase
+
+```SQL
+  CREATE TABLE table_name (
+    column1 datatype constraints,
+    column2 datatype constraints,
+    ...
+  );
+```
+
+### Syntax for Feeding the data:
+
+```SQL
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+```
