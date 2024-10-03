@@ -19,5 +19,14 @@
 
 - For every commit, Git generates a unique commit ID (also called a commit hash or SHA-1 hash). This commit ID is a 40-character hexadecimal string that uniquely identifies the commit in the repository’s history.
 
-
 # commiting best practices
+
+# Commiting the file withour staging:
+
+- In Git, you can skip the staging area and commit changes directly from your working directory using the `git commit -a -m ${message}`.
+- This command automatically stages all modified and deleted files (tracked files) and commits them, without needing to manually use git add for each file.
+
+#### Note:
+
+- The git commit -a command does not stage new, untracked files (files that were never added to Git). You still need to manually add untracked files with git add before committing them.
+  ![SnapShot](./IMAGES/1.png)
