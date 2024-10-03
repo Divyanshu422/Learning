@@ -18,3 +18,6 @@
 - Command used to commit the changes -> `git commit -m '${commit_message}'`
 
 - For every commit, Git generates a unique commit ID (also called a commit hash or SHA-1 hash). This commit ID is a 40-character hexadecimal string that uniquely identifies the commit in the repository’s history.
+
+
+# commiting best practices
