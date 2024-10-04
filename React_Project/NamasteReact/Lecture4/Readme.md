@@ -193,7 +193,35 @@
 
 - In useEffect, the return statement is used to define a cleanup function. This function runs when the component unmounts or before the effect runs again (if the dependencies change).
 
-# Lecture 9:
+# Lecture 9: Understanding the Custom hOOK
 
 - Single page responsibility
-- Custom hook
+- Custom hook:
+
+  - we have created 2 custom hook in which we have made the API call
+
+    - the first hook is for getting the data of restaurant Card
+    - the 2nd custom hook is for getting the data Menu for the restaurant which is selected. The RestaurantMenu.jsx file receives the resID from the Body component.
+
+    ```jsx
+    <div className="restaurant-container">
+      {filteredData.map((restaurant) => (
+        <Link
+          to={`/restaurant/${restaurant?.info?.id}`}
+          className="no-underline"
+          key={restaurant?.info?.id}
+        >
+          <RestaurantCard resData={restaurant.info} />
+        </Link>
+      ))}
+    </div>
+    ```
+
+- We have use the Link tag -> and in the to attribute of the link tag we have routed the Restaurant_Card to their Menu.
+- to extract the `id` which is sent in the Link tag -> in the RestaurantMenu component we have used the `useParams` hook
+
+### Note
+
+- Whenever we define the custom hook -> always remember to define the contract of the hook -> i.e. what it taks as input
+  and what shall it return in the output.
+- In the `ResturantDatahook` and `RestaurantMenu` hook -> the input is url and resId respectively and return the data.
