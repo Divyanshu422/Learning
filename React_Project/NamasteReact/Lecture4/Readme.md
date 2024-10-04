@@ -225,3 +225,10 @@
 - Whenever we define the custom hook -> always remember to define the contract of the hook -> i.e. what it taks as input
   and what shall it return in the output.
 - In the `ResturantDatahook` and `RestaurantMenu` hook -> the input is url and resId respectively and return the data.
+
+### Creating the custom hook for online and offline status for the application
+
+- To implement this we have used the `online` and `offline` eventListerner -> which is called on the window object of browser. The event [online || offline ] gets triggered based on the connectivity.
+- Based on the event which gets triggered we can call the respective function on the events
+
+- I have implemented the online status in the header section

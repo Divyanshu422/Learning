@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import logo from '../Assets/FoodLogo.png'
 import { Link } from 'react-router-dom'
+import { RiWifiOffLine } from "react-icons/ri";
+import { RiBaseStationLine } from "react-icons/ri";
+import useOnlineStatus from '../utils/customHook/useOnlineStatus'
 function Header() {
 
   const [ btnName, setBtnName ] =useState('LogIn')
+  const onlineStatus = useOnlineStatus();
   return (
     <div>
     <div className="header-container">
@@ -12,6 +16,11 @@ function Header() {
       </div>
       <div className="nav-items">
         <ul>
+          <li>
+            {
+              onlineStatus ? <RiBaseStationLine /> : <RiWifiOffLine />
+            }
+          </li>
           <li>
             <Link to ='/'>Home</Link>
           </li>
