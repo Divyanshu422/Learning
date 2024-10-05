@@ -4,6 +4,7 @@ import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
 import { restaurantDataUrl } from '../utils/url';
 import useRestaurantData from '../utils/customHook/useRestaurantData';
+import useOnlineStatus from '../utils/customHook/useOnlineStatus';
 function Body() {
   // const [filteredData, setFilteredData] = useState([]); // Initialize as an empty array
   // const [data, setData] = useState([]); // Initialize as an empty array
@@ -28,6 +29,11 @@ function Body() {
     console.log('inside the function ',filteredData)
   };
 
+  const onlineStatus = useOnlineStatus();
+
+  if(onlineStatus === false) 
+    return <h1>Please check the internet</h1>;
+  
   return (loading) ? (
     <Shimmer />
   ) : (
