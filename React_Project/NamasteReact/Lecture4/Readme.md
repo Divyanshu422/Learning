@@ -193,6 +193,10 @@
 
 - In useEffect, the return statement is used to define a cleanup function. This function runs when the component unmounts or before the effect runs again (if the dependencies change).
 
+---
+
+---
+
 # Lecture 9: Understanding the Custom hOOK
 
 - Single page responsibility
@@ -220,11 +224,15 @@
 - We have use the Link tag -> and in the to attribute of the link tag we have routed the Restaurant_Card to their Menu.
 - to extract the `id` which is sent in the Link tag -> in the RestaurantMenu component we have used the `useParams` hook
 
+---
+
 ### Note
 
 - Whenever we define the custom hook -> always remember to define the contract of the hook -> i.e. what it taks as input
   and what shall it return in the output.
 - In the `ResturantDatahook` and `RestaurantMenu` hook -> the input is url and resId respectively and return the data.
+
+---
 
 ### Creating the custom hook for online and offline status for the application
 
@@ -232,3 +240,35 @@
 - Based on the event which gets triggered we can call the respective function on the events
 
 - I have implemented the online status in the header section
+
+---
+
+### Bundling the application and Problem Associated with it
+
+- In React a bundler like Webpack, Vite, or Parcel takes all of your React code, along with its dependencies, and bundles it into one or more JavaScript files that can be served to the browser. The main objective of a bundler is to optimize and compile the code for production use. with single file of JavaScript -> there is problem of slower loading time. [ this is becoz the js file is huge]
+- To Overcome this problem we have introduce the concept of `chuncking or Code Splitting or Dynamic loading, lazyLoading`
+
+---
+
+### Chunking or Code Splitting:
+
+- In React, chunking refers to the practice of splitting or breaking down large pieces of functionality or components into smaller, manageable parts. This helps improve performance and maintainability. Chunking is often used in the context of code-splitting and lazy loading to ensure that users only download the code they need at any given time, rather than loading the entire app upfront.
+
+- We have created a `Grocery.js` component which will be handled using the lazy loading
+
+- To achieve lazy loading we have used
+
+  - lazy() function from React: This function takes a callback, where we pass the path to the component using the import function. This tells React to load the component only when needed.
+
+  ```jsx
+  const MyComponent = lazy(() => import("./MyComponent"));
+  ```
+
+  - Suspense component from React: This tells React to wait while the component is being loaded. It wraps the lazy-loaded component and ensures React doesn’t crash or throw errors while waiting.
+  - fallback prop: This defines the UI (like a loading spinner or text) that will be shown while the component is loading. It gives users feedback that something is happening until the component is ready.
+
+  ```jsx
+  <Suspense fallback={<div>Loading...</div>}>
+    <MyComponent />
+  </Suspense>
+  ```

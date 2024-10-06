@@ -18,17 +18,20 @@ function Header() {
         <ul>
           <li>
             {
-              onlineStatus ? <RiBaseStationLine /> : <RiWifiOffLine />
+              onlineStatus ? <RiBaseStationLine/> : <RiWifiOffLine />
             }
           </li>
           <li>
             <Link to ='/'>Home</Link>
           </li>
           <li>
-            <Link to ='/About'>About Us</Link>
+            <Link to ='/about'>About Us</Link>
           </li>
           <li>
-          <Link to ='/Contact'>Contact Us</Link>
+          <Link to ='/contactus'>Contact Us</Link>
+          </li>
+          <li>
+            <Link to ='/grocery'>Grocery</Link>
           </li>
           <li>Cart</li>
           <li>
