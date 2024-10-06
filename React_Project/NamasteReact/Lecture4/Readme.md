@@ -272,3 +272,22 @@
     <MyComponent />
   </Suspense>
   ```
+
+---
+
+# Lecture 10: Jo dikhta hai vo bikta hai [ Implementing the CSS ]
+
+- There are number of ways to add css to the Skeleton code/component:
+  - css: External style styles
+  - Sass: Syntactically Awesome stylee sheet [ Old way ] -> Not recommended
+  - Styled Component:
+    ```link
+      https://styled-components.com/
+    ```
+  - `Tailwind`: Modern way
+  - Bootstrap, Mateerial Ui, Chakra UI, ant Design -> CSS framework
+
+### Tailwind: Gaining the Traction
+
+- Install the tailwind
+-
