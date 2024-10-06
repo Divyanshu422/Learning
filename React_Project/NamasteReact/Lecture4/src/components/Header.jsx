@@ -10,32 +10,32 @@ function Header() {
   const onlineStatus = useOnlineStatus();
   return (
     <div>
-    <div className="header-container">
+    <div className="flex items-center justify-between border-2 border-red-400">
       <div className="logo-container">
-        <img src={logo} className="logo" />
+        <img src={logo} className="w-[150px] pl-[20px] m-[10px]" />
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>
+      <div className="">
+        <ul className='flex m-[10px] list-none'>
+          <li className='pl-3 text-[30px]'>
             {
               onlineStatus ? <RiBaseStationLine/> : <RiWifiOffLine />
             }
           </li>
-          <li>
+          <li className='pl-6 text-[30px]'>
             <Link to ='/'>Home</Link>
           </li>
-          <li>
+          <li className='pl-6 text-[30px]'>
             <Link to ='/about'>About Us</Link>
           </li>
-          <li>
+          <li className='pl-6 text-[30px]'>
           <Link to ='/contactus'>Contact Us</Link>
           </li>
-          <li>
+          <li className='pl-6 text-[30px]'>
             <Link to ='/grocery'>Grocery</Link>
           </li>
-          <li>Cart</li>
-          <li>
-            <button className="btn" onClick={() => {
+          <li className='pl-6 text-[30px]'>Cart</li>
+          <li className='pl-6 text-[30px]'>
+            <button className="bg-green-500 border-none text-white py-2 px-4 text-center no-underline inline-block text-base m-1.5 cursor-pointer rounded-lg transition ease-in-out duration-300" onClick={() => {
                 setBtnName ((value)=> {
                   return value  === 'LogIn'? 'SignUp' : 'LogIn'
                 })

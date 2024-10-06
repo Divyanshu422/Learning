@@ -5,14 +5,10 @@ import { Link } from 'react-router-dom';
 import { restaurantDataUrl } from '../utils/url';
 import useRestaurantData from '../utils/customHook/useRestaurantData';
 import useOnlineStatus from '../utils/customHook/useOnlineStatus';
+
 function Body() {
-  // const [filteredData, setFilteredData] = useState([]); // Initialize as an empty array
-  // const [data, setData] = useState([]); // Initialize as an empty array
   const [searchText, setSearchText] = useState("");
-
-    const {filteredData, loading, data, setFilteredData} = useRestaurantData(restaurantDataUrl)
-    console.log(setFilteredData);
-
+  const { filteredData, loading, data, setFilteredData } = useRestaurantData(restaurantDataUrl);
 
   // Handle search functionality
   const handleSearch = () => {
@@ -26,42 +22,48 @@ function Body() {
   // Handle filtering by top-rated restaurants
   const filterTopRated = () => {
     setFilteredData(data.filter(item => item.info.avgRating >= 4.5)); // Filter from original data
-    console.log('inside the function ',filteredData)
   };
 
   const onlineStatus = useOnlineStatus();
 
-  if(onlineStatus === false) 
-    return <h1>Please check the internet</h1>;
-  
-  return (loading) ? (
+  if (onlineStatus === false) 
+    return <h1 className="text-center text-xl text-red-500">Please check the internet</h1>;
+
+  return loading ? (
     <Shimmer />
   ) : (
-    <div>
-      <div className="body">
-        <div className="filter">
-          <div className="search-container">
+    <div className="p-4">
+      <div className="mb-4">
+        <div className="flex flex-col md:flex-row md:items-center mb-4">
+          <div className="relative flex-grow mb-4 md:mb-0">
             <input
               type="text"
               placeholder="Search for restaurants"
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-green-300"
             />
-            <button className="search-btn" onClick={handleSearch}>
-              Search
-            </button>
           </div>
-          <button className="filter-btn" onClick={filterTopRated}>
-            Top Rated
+          <button
+            className="ml-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300"
+            onClick={handleSearch}
+          >
+            Search
           </button>
         </div>
-        <div className="restaurant-container">
-          {filteredData.map((restaurant) => (
-            <Link to={`/restaurant/${restaurant?.info?.id}`} className="no-underline" key={restaurant?.info?.id}>
-              <RestaurantCard resData={restaurant.info} />
-            </Link>
-          ))}
-        </div>
+        <button
+          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300"
+          onClick={filterTopRated}
+        >
+          Top Rated
+        </button>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {filteredData.map((restaurant) => (
+          <Link to={`/restaurant/${restaurant?.info?.id}`} className="no-underline" key={restaurant?.info?.id}>
+            <RestaurantCard resData={restaurant.info} />
+          </Link>
+        ))}
       </div>
     </div>
   );
