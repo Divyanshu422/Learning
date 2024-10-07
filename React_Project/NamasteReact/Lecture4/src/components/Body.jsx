@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import RestaurantCard from './RestaurantCard';
+import RestaurantCard, {WithPromotedLabel} from './RestaurantCard';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
 import { restaurantDataUrl } from '../utils/url';
@@ -9,7 +9,8 @@ import useOnlineStatus from '../utils/customHook/useOnlineStatus';
 function Body() {
   const [searchText, setSearchText] = useState("");
   const { filteredData, loading, data, setFilteredData } = useRestaurantData(restaurantDataUrl);
-
+  console.log(filteredData);
+  const RestaurantCardPromoted = WithPromotedLabel(RestaurantCard);
   // Handle search functionality
   const handleSearch = () => {
     if (searchText.trim() === "") {
@@ -60,8 +61,11 @@ function Body() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {filteredData.map((restaurant) => (
-          <Link to={`/restaurant/${restaurant?.info?.id}`} className="no-underline" key={restaurant?.info?.id}>
-            <RestaurantCard resData={restaurant.info} />
+          <Link to={`/restaurant/${restaurant?.info?.id}`} className="no-underline" key={restaurant?.info?.id}> 
+            {/* Implementing the higher order Component over the restauraCard Component */}
+            {
+                (restaurant.info.avgRating > 4.3)? <RestaurantCardPromoted resData={restaurant.info}/> :  <RestaurantCard resData={restaurant.info} />
+            }
           </Link>
         ))}
       </div>

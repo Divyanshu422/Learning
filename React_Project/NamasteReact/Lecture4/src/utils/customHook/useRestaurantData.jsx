@@ -14,7 +14,6 @@ function useRestaurantData(url) {
         const result = await response.json();
         const restaurants = result?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || []; // Fallback to empty array
         setFilteredData(restaurants);
-        // console.log('the received data is ', restaurants);
         setData(restaurants);
         setLoading(false);
       };

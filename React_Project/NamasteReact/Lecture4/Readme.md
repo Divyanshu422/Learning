@@ -291,3 +291,17 @@
 
 - Install the tailwind
 -
+
+# Lecture 11
+
+### Higher Order Component:
+
+- Higher order component takes a component as a input and return the updated component
+  - By updated component we mean that we are not changing the component but we are only adding some features to the component.
+- To use High Order Component we need to learn 2 syntax:
+  - `How to declare the HOC?`
+  - `How to use the HOC?`
+
+### Controlled and uncontrolled component
+
+### Lifting the state up
