@@ -12,7 +12,7 @@ function RestaurantMenu() {
     const titleData = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((item)=>item?.card?.card?.["@type"] ==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
 
     const cuisines = resInfo?.data?.cards[2]?.card?.card?.info?.cuisines;
-    console.log('the titleData is', titleData)
+
 
     return (resInfo == null) ? (
         <Shimmer />
@@ -25,9 +25,9 @@ function RestaurantMenu() {
                 {   
                     titleData?.map((item, index) => {
                         return (
-                            <div>
-                                <h1 className='text-center text-2xl font-bold text-red-800'>{item?.card?.card?.title}</h1>
-                                <RestaurantAccordian data1={item?.card?.card?.itemCards}/>'
+                            <div key={index}>
+                                {/* <h1 className='text-center text-2xl font-bold text-red-800'>{item?.card?.card?.title/itemCards}</h1> */}
+                                <RestaurantAccordian data={item?.card?.card}/>
                             </div>
                         )
                     })
@@ -39,5 +39,12 @@ function RestaurantMenu() {
 
 export default RestaurantMenu;
 
+
+/*
+      <h1 className='text-center text-2xl font-bold text-red-800'>{item?.card?.card?.title}</h1>
+                                <RestaurantAccordian data1={item?.card?.card?.itemCards}/>'
+
+
+*/
 
 
