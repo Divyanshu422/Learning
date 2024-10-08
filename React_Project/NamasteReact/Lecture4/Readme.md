@@ -302,6 +302,29 @@
   - `How to declare the HOC?`
   - `How to use the HOC?`
 
+### Bracket Notation and Dot Notation in accessing the properties of Object:
+
+- The @type is a key in the object, but it contains a special character (@), which makes dot notation invalid (obj.@type is not allowed).
+- Bracket notation lets you access keys that contain characters like @, spaces, or even other invalid identifiers for dot notation.
+
+```JavaScript
+const data = [
+  { '@type': 'A', name: 'Item 1' },
+  { '@type': 'B', name: 'Item 2' },
+  { '@type': 'A', name: 'Item 3' }
+];
+
+// Filtering based on @type using bracket notation
+const filteredData = data.filter(item => item['@type'] === 'A');
+
+console.log(filteredData); // Outputs: [{ '@type': 'A', name: 'Item 1' }, { '@type': 'A', name: 'Item 3' }]
+
+
+```
+
 ### Controlled and uncontrolled component
+
+- Managing the state or data of UI can be challenging process.
+- There are 2 layers in the Frontend🧮
 
 ### Lifting the state up
