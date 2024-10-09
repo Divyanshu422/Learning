@@ -3,7 +3,6 @@ import UserClass from "./UserClass";
 import { UserContext } from "../utils/Context/UserContext";
 function About() {
   const { userInfo } = useContext(UserContext);
-  console.log(userInfo);
   const data = {
     name: "Divyanshu",
     state: "Uttar Pradesh",
@@ -14,8 +13,7 @@ function About() {
       <h1 className="text-3xl font-bold mb-4 text-gray-800">
         This is the About Us Page
       </h1>
-      <h2>{userInfo.name}</h2>
-      <h2>{userInfo.address}</h2>
+      <h2>{userInfo}</h2>
       <UserClass props={data} />
     </div>
   );

@@ -8,13 +8,12 @@ function AppLayout() {
     // Making an api call and receiving the data
     const data = {
       name: "Divyanshu",
-      address: "India",
     };
     //  Saving the received data form the Api call to the state variable
-    setUserInfo(data);
+    setUserInfo(data.name);
   }, []);
   return (
-    <UserContext.Provider value={{ userInfo }}>
+    <UserContext.Provider value={{ userInfo, setUserInfo }}>
       <div className="flex flex-col min-h-screen bg-gray-100">
         <Header />
         {/* Implementing the condition on the application so that children route is rendered */}
