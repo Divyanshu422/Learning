@@ -5,7 +5,7 @@ import ChildClass from './ChildClass';
 class UserClass extends React.Component {
     constructor(props) {
         super(props); // Calls the constructor of the parent class
-        console.log('Parent Constructor is called ')
+        // console.log('Parent Constructor is called ')
 
         // Initialize the state
         this.state = {
@@ -18,23 +18,23 @@ class UserClass extends React.Component {
     }
 
     async componentDidMount() {
-        console.log('Parent component is called');
+        // console.log('Parent component is called');
         const response = await fetch('https://api.github.com/users/Divyanshu422');
         const data = await response.json();
         this.setState({ userInfo: data });
     }
 
     componentDidUpdate() {
-        console.log('Parent component Did update rendered');
+        // console.log('Parent component Did update rendered');
     }
 
     componentWillUnmount() {
-        console.log('component will unmount was called');
+        // console.log('component will unmount was called');
     }
 
     // Render function inside the class-based component
     render() {
-        console.log('Parent render function is called');
+        // console.log('Parent render function is called');
 
         // Destructuring the props
         const { name, state, contact } = this.props.props;

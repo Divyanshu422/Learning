@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -13,10 +13,9 @@ import { RouterProvider } from "react-router-dom";
 const App = () => {
   //* creating the Browser Configuration for our application using createBrowserRouter
 
-  const Grocery = lazy(() =>import('./components/Grocery_Component/Grocery'));
- 
-  // const Grocery = React.lazy(() =>import('./components/Grocery_Component/Grocery'));
+  const Grocery = lazy(() => import("./components/Grocery_Component/Grocery"));
 
+  // const Grocery = React.lazy(() =>import('./components/Grocery_Component/Grocery'));
 
   let appRouter = createBrowserRouter([
     {
@@ -27,8 +26,15 @@ const App = () => {
         { path: "/about", element: <About /> },
         { path: "/contactus", Component: ContactUs },
         { path: "/restaurant/:resId", Component: RestaurantMenu },
-        { path: "/grocery", element: <Suspense fallback={<div>Page is loading</div>}><Grocery /></Suspense>  },
-      ], 
+        {
+          path: "/grocery",
+          element: (
+            <Suspense fallback={<div>Page is loading</div>}>
+              <Grocery />
+            </Suspense>
+          ),
+        },
+      ],
       errorElement: <ErrorPage />,
     },
   ]);

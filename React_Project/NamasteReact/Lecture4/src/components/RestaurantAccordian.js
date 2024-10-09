@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { BiSolidDownArrowCircle } from "react-icons/bi";
 import ItemListAccordianData from "./ItemListAccordianData";
-function RestaurantAccordian({ data }) {
-  // console.log(data);
-
-  const [open, setOpen] = useState(false);
+function RestaurantAccordian({ data, open, setTrackIndex, index }) {
   let imageId =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
@@ -14,7 +11,7 @@ function RestaurantAccordian({ data }) {
         <div className="flex flex-col gap-1 py-4">
           <div
             className=" bg-[#ECDFCC] py-2 rounded-xl  px-4 flex text-xl font-semibold items-center justify-between cursor-pointer"
-            onClick={() => setOpen((value) => !value)}
+            onClick={() => setTrackIndex(index)}
           >
             {data?.title} ({data.itemCards.length})
             <BiSolidDownArrowCircle className="ml-2 " />

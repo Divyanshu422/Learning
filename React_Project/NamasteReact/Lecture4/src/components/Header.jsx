@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import logo from '../Assets/FoodLogo.png'
 import { Link } from 'react-router-dom'
 import { RiWifiOffLine } from "react-icons/ri";
 import { RiBaseStationLine } from "react-icons/ri";
 import useOnlineStatus from '../utils/customHook/useOnlineStatus'
+import { UserContext } from '../utils/Context/UserContext';
 function Header() {
 
   const [ btnName, setBtnName ] =useState('LogIn')
-  const onlineStatus = useOnlineStatus();
+  const onlineStatus = useOnlineStatus(UserContext);    // custom hook
+  const {loggedInUser} = useContext(UserContext);   // context 
+
   return (
     <div>
     <div className="flex items-center justify-between border-2 border-red-400">
@@ -41,6 +44,7 @@ function Header() {
                 })
             }}>{btnName}</button>
           </li>
+          <li className='pl-6 text-[30px]'>{loggedInUser}</li>
         </ul>
       </div>
     </div>

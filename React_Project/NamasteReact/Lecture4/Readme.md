@@ -328,3 +328,8 @@ console.log(filteredData); // Outputs: [{ '@type': 'A', name: 'Item 1' }, { '@ty
 - There are 2 layers in the Frontend🧮
 
 ### Lifting the state up
+
+- Study from the react latest manual [18 version]. they have shown it with the help of accordian UI
+
+### Context API
+- Used to OverCome the Prop drilling problem
