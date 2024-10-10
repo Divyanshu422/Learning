@@ -332,4 +332,47 @@ console.log(filteredData); // Outputs: [{ '@type': 'A', name: 'Item 1' }, { '@ty
 - Study from the react latest manual [18 version]. they have shown it with the help of accordian UI
 
 ### Context API
+
 - Used to OverCome the Prop drilling problem
+
+---
+
+---
+
+# Lecture 12: Redux Store: [ Creating a folder Redux ]
+
+### Step 1: Libraries install
+
+- Install the Redux two libraries: `@reduxjs/toolkit` && `react-redux`
+
+### Step 2: Store creations
+
+- Create the Redux Store: The store holds your application’s state (data).
+
+  - You create the store using `configureStore` from Redux Toolkit.
+    ![Image](../Lecture4/src/Image/ReduxStoreImg.png)
+
+### Step 3: Link store to the React
+
+- Connect the Store to the Application
+
+  - To make the store accessible to all components, you need to wrap your app with a special component called `Provider` from react-redux.
+    - The `Provider` Component has a prop store in which we need to pass the store created in above step
+  - This allows any React component to access the data in the store.
+
+    ```jsx
+    root.render(
+      <Provider store={appStore}>
+        <App />
+      </Provider>
+    );
+    ```
+
+### Step 4: Create the Slice
+
+- A slice is a collection of Redux logic (state + actions + reducers) for one part of your app.
+- You create it using the `createSlice` function from @reduxjs/toolkit.
+
+### Step 5: Dispatch an action
+
+### Step 6: use the selector

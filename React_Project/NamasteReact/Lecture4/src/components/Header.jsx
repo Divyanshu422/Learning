@@ -5,12 +5,14 @@ import { RiWifiOffLine } from "react-icons/ri";
 import { RiBaseStationLine } from "react-icons/ri";
 import useOnlineStatus from '../utils/customHook/useOnlineStatus'
 import { UserContext } from '../utils/Context/UserContext';
+import { useSelector } from 'react-redux';
 function Header() {
 
   const [ btnName, setBtnName ] =useState('LogIn')
-  const onlineStatus = useOnlineStatus(UserContext);    // custom hook
-  const {loggedInUser} = useContext(UserContext);   // context 
-
+  const onlineStatus = useOnlineStatus();    // custom hook
+  const {userInfo} = useContext(UserContext);   // context 
+  const cartItems = useSelector((store) => store.cart.items);
+  // console.log(cartItems);
   return (
     <div>
     <div className="flex items-center justify-between border-2 border-red-400">
@@ -19,11 +21,11 @@ function Header() {
       </div>
       <div className="">
         <ul className='flex m-[10px] list-none'>
-          <li className='pl-3 text-[30px]'>
+          {/* <li className='pl-3 text-[30px]'>
             {
               onlineStatus ? <RiBaseStationLine/> : <RiWifiOffLine />
             }
-          </li>
+          </li> */}
           <li className='pl-6 text-[30px]'>
             <Link to ='/'>Home</Link>
           </li>
@@ -36,7 +38,7 @@ function Header() {
           <li className='pl-6 text-[30px]'>
             <Link to ='/grocery'>Grocery</Link>
           </li>
-          <li className='pl-6 text-[30px]'>Cart</li>
+          <li className='pl-6 text-[30px]'>Cart - {cartItems.length} items</li>
           <li className='pl-6 text-[30px]'>
             <button className="bg-green-500 border-none text-white py-2 px-4 text-center no-underline inline-block text-base m-1.5 cursor-pointer rounded-lg transition ease-in-out duration-300" onClick={() => {
                 setBtnName ((value)=> {
@@ -44,7 +46,7 @@ function Header() {
                 })
             }}>{btnName}</button>
           </li>
-          <li className='pl-6 text-[30px]'>{loggedInUser}</li>
+          <li className='pl-6 text-[30px]'>{userInfo}</li>
         </ul>
       </div>
     </div>
