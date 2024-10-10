@@ -1,10 +1,11 @@
 import React from "react";
-
+import { useDispatch } from "react-redux";
+import { addItem } from "../Redux/cartSlice";
 function ItemListAccordianData({ data }) {
   //   console.log(data);
   let imageId =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
-
+  const dispatch = useDispatch();
   return (
     <div className="flex flex-col space-y-4">
       {data?.map((item) => {
@@ -28,7 +29,13 @@ function ItemListAccordianData({ data }) {
                 className="object-cover rounded-lg"
                 alt="Item Image"
               />
-              <button className="absolute w-[2/4] bg-white text-green-600 shadow-2xl px-4 py-2 text-sm font-bold rounded-xl -bottom-4 left-6 ">
+              <button
+                className="absolute w-[2/4] bg-white text-green-600 shadow-2xl px-4 py-2 text-sm font-bold rounded-xl -bottom-4 left-6 "
+                onClick={() => {
+                  // Dispatching the action
+                  dispatch(addItem(item?.card?.info?.name));
+                }}
+              >
                 ADD +
               </button>
             </div>

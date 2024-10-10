@@ -12,7 +12,7 @@ function Header() {
   const onlineStatus = useOnlineStatus();    // custom hook
   const {userInfo} = useContext(UserContext);   // context 
   const cartItems = useSelector((store) => store.cart.items);
-  // console.log(cartItems);
+  console.log(cartItems);
   return (
     <div>
     <div className="flex items-center justify-between border-2 border-red-400">
