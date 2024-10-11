@@ -9,7 +9,7 @@ import { UserContext } from '../utils/Context/UserContext';
 function Body() {
   const [searchText, setSearchText] = useState("");
   const { filteredData, loading, data, setFilteredData } = useRestaurantData(restaurantDataUrl);
-  console.log(filteredData);
+  // console.log(filteredData);
 
   const {setUserInfo} = useContext(UserContext);
 

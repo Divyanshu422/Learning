@@ -13,7 +13,7 @@ function RestaurantMenu() {
     const titleData = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((item)=>item?.card?.card?.["@type"] ==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
 
     const cuisines = resInfo?.data?.cards[2]?.card?.card?.info?.cuisines;
-    console.log('the value of index', trackIndex)
+    // console.log('the value of index', trackIndex)
 
     return (resInfo == null) ? (
         <Shimmer />

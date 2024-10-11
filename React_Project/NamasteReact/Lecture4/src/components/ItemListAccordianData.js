@@ -33,7 +33,7 @@ function ItemListAccordianData({ data }) {
                 className="absolute w-[2/4] bg-white text-green-600 shadow-2xl px-4 py-2 text-sm font-bold rounded-xl -bottom-4 left-6 "
                 onClick={() => {
                   // Dispatching the action
-                  dispatch(addItem(item?.card?.info?.name));
+                  dispatch(addItem(item));
                 }}
               >
                 ADD +

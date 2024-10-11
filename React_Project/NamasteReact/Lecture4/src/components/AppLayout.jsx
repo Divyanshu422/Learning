@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react';
 import Header from './Header';
 import { Outlet } from 'react-router-dom';
 import { UserContext } from '../utils/Context/UserContext';
-import { Provider } from 'react-redux';
-import appStore from '../Redux/appStore';
+// import { Provider } from 'react-redux';
+// import appStore from '../Redux/appStore';
 function AppLayout() {
   const [userInfo, setUserInfo] = useState("");
   useEffect(() => {
@@ -15,7 +15,7 @@ function AppLayout() {
     setUserInfo(data.name);
   }, []);
   return (
-    <Provider store={appStore}>
+    // <Provider store={appStore}>
     <UserContext.Provider value={{ userInfo, setUserInfo }}>
       <div className="flex flex-col min-h-screen bg-gray-100">
         <Header />
@@ -25,7 +25,7 @@ function AppLayout() {
           </main>
       </div>
     </UserContext.Provider>
-</Provider>
+// </Provider>
   );
 }
 

@@ -38,7 +38,12 @@ function Header() {
           <li className='pl-6 text-[30px]'>
             <Link to ='/grocery'>Grocery</Link>
           </li>
-          <li className='pl-6 text-[30px]'>Cart - {cartItems.length} items</li>
+          <li className='pl-6 text-[30px]'>
+            <Link to='/cart'>
+              Cart - {cartItems.length} items
+            </Link>  
+          </li>
+         
           <li className='pl-6 text-[30px]'>
             <button className="bg-green-500 border-none text-white py-2 px-4 text-center no-underline inline-block text-base m-1.5 cursor-pointer rounded-lg transition ease-in-out duration-300" onClick={() => {
                 setBtnName ((value)=> {

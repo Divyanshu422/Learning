@@ -9,7 +9,9 @@ import ErrorPage from "./components/ErrorPage";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
-
+import Cart from "./components/Cart";
+import { Provider } from "react-redux";
+import appStore from "./Redux/appStore";
 const App = () => {
   //* creating the Browser Configuration for our application using createBrowserRouter
 
@@ -37,6 +39,10 @@ const App = () => {
       ],
       errorElement: <ErrorPage />,
     },
+    {
+      path: "/cart",
+      element: <Cart />,
+    },
   ]);
   return (
     // * Consuming the configuration and providing to the application
@@ -45,4 +51,8 @@ const App = () => {
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(
+  <Provider store={appStore}>
+    <App />
+  </Provider>
+);
