@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearItem } from "../Redux/cartSlice";
 function Cart() {
   const itemList = useSelector((store) => store.cart.items);
-  //   console.log("The list includes", itemList);
+  console.log("The list includes", itemList);
   const dispatch = useDispatch();
   let imageId =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
@@ -19,6 +19,7 @@ function Cart() {
       >
         Empty Cart
       </button>
+      {itemList.length === 0 && <h1>The cart is empty please Add Something</h1>}
 
       <div className="w-8/12 flex flex-col gap-6">
         {itemList.map((item, index) => {
@@ -27,7 +28,7 @@ function Cart() {
               key={index}
               className="flex justify-between items-center bg-white shadow-lg rounded-lg p-4 transition duration-300 ease-in-out transform hover:scale-105"
             >
-              <p className="text-5xl font-semibold text-gray-700 w-7/12">
+              <p className="text-2xl font-semibold text-gray-700 w-7/12">
                 {item?.card?.info?.name}
               </p>
 
@@ -41,6 +42,12 @@ function Cart() {
             </div>
           );
         })}
+      </div>
+      <hr></hr>
+      <div className="py-3 text-xl">Subtotal:
+        {
+            
+        }
       </div>
     </div>
   );
