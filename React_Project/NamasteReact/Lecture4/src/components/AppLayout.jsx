@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react';
 import Header from './Header';
 import { Outlet } from 'react-router-dom';
 import { UserContext } from '../utils/Context/UserContext';
-// import { Provider } from 'react-redux';
-// import appStore from '../Redux/appStore';
+
+
 function AppLayout() {
   const [userInfo, setUserInfo] = useState("");
   useEffect(() => {

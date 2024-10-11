@@ -10,9 +10,9 @@ function Header() {
 
   const [ btnName, setBtnName ] =useState('LogIn')
   const onlineStatus = useOnlineStatus();    // custom hook
-  const {userInfo} = useContext(UserContext);   // context 
+  const { userInfo } = useContext(UserContext);   // context 
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+  // console.log(cartItems);
   return (
     <div>
     <div className="flex items-center justify-between border-2 border-red-400">
@@ -40,7 +40,7 @@ function Header() {
           </li>
           <li className='pl-6 text-[30px]'>
             <Link to='/cart'>
-              Cart - {cartItems.length} items
+              Cart {cartItems.length}
             </Link>  
           </li>
          

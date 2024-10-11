@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearItem } from "../Redux/cartSlice";
+
 function Cart() {
   const itemList = useSelector((store) => store.cart.items);
-  console.log("The list includes", itemList);
   const dispatch = useDispatch();
+  const [subtotal, setSubtotal] = useState(0); // State to store subtotal
   let imageId =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+
+  // Calculate subtotal whenever itemList changes
+  useEffect(() => {
+    const total = itemList.reduce((total, item) => {
+      return total + (item?.card?.info?.price || 0);
+    }, 0);
+    setSubtotal(total); // Update subtotal state
+  }, [itemList]); // Dependency array ensures recalculation when itemList changes
 
   return (
     <div className="h-screen w-full mx-auto flex flex-col items-center justify-start py-10 bg-gray-50">
@@ -19,7 +28,7 @@ function Cart() {
       >
         Empty Cart
       </button>
-      {itemList.length === 0 && <h1>The cart is empty please Add Something</h1>}
+      {itemList.length === 0 && <h1>The cart is empty, please add something</h1>}
 
       <div className="w-8/12 flex flex-col gap-6">
         {itemList.map((item, index) => {
@@ -44,10 +53,8 @@ function Cart() {
         })}
       </div>
       <hr></hr>
-      <div className="py-3 text-xl">Subtotal:
-        {
-            
-        }
+      <div className="py-3 text-xl">
+        Subtotal: ₹{(subtotal / 100).toFixed(2)} {/* Convert paise to rupees */}
       </div>
     </div>
   );
