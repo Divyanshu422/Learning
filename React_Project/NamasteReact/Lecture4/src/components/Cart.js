@@ -1,16 +1,24 @@
 import React from "react";
-import { useSelector } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import { clearItem } from "../Redux/cartSlice";
 function Cart() {
   const itemList = useSelector((store) => store.cart.items);
-  console.log("The list includes", itemList);
-
+  //   console.log("The list includes", itemList);
+  const dispatch = useDispatch();
   let imageId =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
   return (
     <div className="h-screen w-full mx-auto flex flex-col items-center justify-start py-10 bg-gray-50">
       <h1 className="text-3xl font-bold text-gray-800 mb-8">Order Summary</h1>
+      <button
+        className="bg-slate-700 text-white mb-4 py-2 px-4 rounded-lg"
+        onClick={() => {
+          dispatch(clearItem());
+        }}
+      >
+        Empty Cart
+      </button>
 
       <div className="w-8/12 flex flex-col gap-6">
         {itemList.map((item, index) => {
