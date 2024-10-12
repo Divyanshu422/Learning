@@ -376,3 +376,20 @@ console.log(filteredData); // Outputs: [{ '@type': 'A', name: 'Item 1' }, { '@ty
 ### Step 5: Dispatch an action
 
 ### Step 6: use the selector
+
+---
+
+# Lecture 13: Testing:
+
+- 3 types of testing performed by software developer (not by tester)
+
+  - Unit Testing: Test individual units or components of the code in isolation.
+  - Integration testing
+  - End to end testing
+
+- Step 1: Install the dependencies: `React Testing Library` && `Jest`
+  - Since we are using Babel as transpiler, we need to install addtional dependencies for using JEST [ 27 MIN]
+  - Since we are using the `Babel` with Jest -> we need to include babel dependencies for JEST. `babel.config.js` file
+  - In our application, we use `parcel` which in backdrop uses babel -> therefore to overcome the comflict of babel used by parcel and JEST -> We will disable the default babel transpilation used by parcel. File included => `.parcelrc`
+  - Jest Configuration file `npx jest --init`
+  - Install the jsdom library
