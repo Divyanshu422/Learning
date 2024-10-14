@@ -6,20 +6,28 @@ function LoginForm() {
   // State variables used to Store the state -> LoginForm or SingInForm
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+  const [name, setName] = useState("");
   const handlerToggleForm = () => {
     setIsSignInForm(!isSignInForm);
   };
 
   // ! On submit checking the whether the email or password is valid or not => To pass the email and password we will use UseRef hook
   const emailRef = useRef("");
+  const nameRef = useRef("");
   const passwordRef = useRef("");
+
   const handleSumit = (e) => {
     e.preventDefault();
+    if (!isSignInForm) {
+      const name = nameRef.current.value;
+      setName(name);
+    }
     // Getting the email and password
-    const email = emailRef.current.value;
+    const piyush = emailRef.current.value;
     const password = passwordRef.current.value;
+
     // Call the function to validate the form-> defines in util file
-    const errorMessage = isDataValid(email, password);
+    const errorMessage = isDataValid(name, piyush, password);
     setErrorMessage(errorMessage);
   };
 
@@ -34,6 +42,7 @@ function LoginForm() {
         </h1>
         {!isSignInForm && (
           <input
+            ref={nameRef}
             type="text"
             name="name"
             placeholder="Name of User"
