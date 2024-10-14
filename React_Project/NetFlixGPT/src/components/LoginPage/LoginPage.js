@@ -5,10 +5,10 @@ import LoginForm from './LoginForm'
 const LoginPage = () => {
   return (
     <div className='relative'>
-      <Header/>
+        <Header/>
         <LoginForm/>
         <img src={BackGround_Image} alt='BackGroundImage' className='w-screen h-screen'/>
-      </div>
+    </div>
 
   )
 }

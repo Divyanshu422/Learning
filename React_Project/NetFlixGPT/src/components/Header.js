@@ -7,7 +7,7 @@ const Header = () => {
       <div className=' flex gap-x-16 '>
             <div className=' border-[1px] py-[0.5rem] px-4 border-white rounded-sm text-white'>
                 <select id="language" name="language" className='bg-inherit'>
-                    <option lang="en" label="English" value="en-IN" selected="">English</option>
+                    <option lang="en" label="English" value="en-IN" >English</option>
                     <option lang='hi' value="hindi">हिन्दी</option>
                 </select>
             </div>
