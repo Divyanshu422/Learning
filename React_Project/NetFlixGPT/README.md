@@ -15,3 +15,10 @@
 - The Body component contains => Routes which defines the navigation baseed on the Url.
 - Created the Sing_In and Login_Form in same component -> and toggling btw using the single state variable.
 - <h1>useRef hook</h1>
+
+# FireBase [ 1 hour 58 min]
+
+- Create the account on Firebase
+- Install the package
+- created the fireBase configuration `fireBase.js` in util folder
+- Install the fireBase configuration using sudo command: `sudo npm install -g firebase-tools`

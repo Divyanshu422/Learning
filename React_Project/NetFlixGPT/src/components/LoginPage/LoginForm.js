@@ -6,7 +6,7 @@ function LoginForm() {
   // State variables used to Store the state -> LoginForm or SingInForm
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
-  const [name, setName] = useState("");
+
   const handlerToggleForm = () => {
     setIsSignInForm(!isSignInForm);
   };
@@ -18,10 +18,9 @@ function LoginForm() {
 
   const handleSumit = (e) => {
     e.preventDefault();
-    if (!isSignInForm) {
+    console.log(isSignInForm)
       const name = nameRef.current.value;
-      setName(name);
-    }
+
     // Getting the email and password
     const piyush = emailRef.current.value;
     const password = passwordRef.current.value;

@@ -6,11 +6,11 @@
 
 //! Creating the named function which checks the email and password of login form
 
-export const isDataValid = (name = "Divyanshu", email, password) => {
+export const isDataValid = (name = "John", email, password) => {
   // Regex pattern for name validation
   const isNameValid = /^([a-zA-Z0-9_\s]+)/.test(name);
   if (!isNameValid) return "Name is not a valid";
-
+ 
   // Regex pattern for validating email
   const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   // If email is not valid then return => Email Failed
